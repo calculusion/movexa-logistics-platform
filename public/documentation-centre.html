@@ -1,0 +1,712 @@
+<!-- Documentation Page - documentation-centre.html-->
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documentation Centre | Movexa</title>
+
+    <link rel="stylesheet" href="/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <style>
+      #protectedContent {
+        opacity: 100;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+  </head>
+
+
+  <body class="bg-[#F5F6F7] text-gray-900 antialiased flex h-screen overflow-hidden">
+
+    <div id="mobileWarning" class="hidden fixed inset-0 z-[99999] bg-[#F5F6F7] items-center justify-center p-8">
+      <div class="max-w-md text-center">
+        <img src="/assets/movexalogolight.png" class="h-5 mx-auto mb-8" alt="Movexa">
+
+        <div class="flex justify-center mb-6">
+          <img src="/maincontenticons/desktop.svg" class="w-16 h-16" alt="desktop">
+        </div>
+
+        <h1 class="text-[16px] font-bold text-[#2D2D2D] mb-4">
+            Desktop Experience Recommended
+        </h1>
+        <p class="text-gray-500 text-[14px] leading-relaxed">
+            Movexa is currently optimized for desktop and laptop devices.
+            Please access the platform using a screen width of at least 1024 pixels for the best experience.
+        </p>
+      </div>
+    </div>
+    
+    <div id="protectedContent" class="flex h-full w-full">
+
+      <!-- STARTS LEFT SIDE MENU BAR -->
+      <aside class="w-[260px] bg-[#2D2D2D] text-gray-300 hidden lg:flex flex-col flex-shrink-0 h-full z-20">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden hide-scrollbar">
+
+
+          <!-- LEFT SIDE MENU BAR - LOGO: movexa -->
+          <div class="h-24 flex items-center px-8 mb-2">
+            <div class="flex gap-3 text-2xl font-medium text-white tracking-tight items-center">
+              <img src="/assets/movexalogodark.png" alt="movexaLogo" class="h-4 w-auto object-contain">
+            </div>
+          </div>
+
+          <!-- LEFT SIDE MENU BAR - MENU NAVIGATION -->
+          <nav class="px-4 space-y-1.5">
+            <a href="/dashboard"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/dasboardicon.svg" class="w-5 h-5" alt="dashboard"/>
+              Dashboard
+            </a>
+            <a href="/shippingpage"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/shippingicon.svg" class="w-5 h-5" alt="shipping"/>
+              Shipping
+            </a>
+            <a href="/tracking"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/trackingicon.svg" class="w-5 h-5" alt="tracking"/>
+              Tracking
+            </a>
+            <a href="/delivery-coverage-shipping-rates"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/expense.svg" class="w-5 h-5" alt="Expense"/>
+              Delivery Rates
+            </a>
+            <a href="/support" 
+              class="flex items-center gap-4 px-4 py-3 mr-[-16px] rounded-l-[8px] text-[15px] bg-[#F93C3F] font-semibold text-white shadow-sm transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/chat.svg" class="w-5 h-5" alt="chatsupport"/>
+              Support
+            </a>
+            <a href="/usage-policy"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/termsofuse.svg" class="w-5 h-5" alt="termsofuse"/>
+              Usage Policy
+            </a>
+          </nav>
+        </div>
+
+        <!-- LEFT SIDE MENU BAR - ACCOUNT + LOG OUT CARD-->
+        <div class="bg-[#252525] px-5 py-6">
+          <div class="flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+              <img id="sidebarAvatar" src="/maincontenticons/profile.svg" alt="User Avatar" class="w-9 h-9 rounded-full object-cover">
+              <span id="sidebarFirstName" class="text-sm max-w-[80px] font-medium text-white truncate">User</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+
+              <a href="https://movexalogistics.betteruptime.com/" target="_blank" class="flex items-center">
+                <button type="button">
+                  <img src="/sidebarIcons/betterstack.svg" class="w-9 h-9 block" alt="Better Stack">
+                </button>
+              </a>
+              <button id="logoutBtn" type="button">
+                <img src="/sidebarIcons/logouticon.svg" class="w-9 h-9" alt="termsofuse">
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </aside>
+      <!-- ENDS LEFT SIDE MENU BAR -->
+
+      <!-- PAGE TRANSITION STARTS -->
+      <div id="pageContent" class="flex h-full w-full opacity-0 translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+        <!-- STARTS RIGHT SIDE CONTENT -->
+        <main class="flex-1 flex flex-col h-full overflow-y-auto hide-scrollbar w-full relative z-10">
+          <div class="p-6 md:p-10 max-w-[1600px] mx-auto w-full">
+            
+            <!-- HEADER SECTION -->
+            <div class="w-full flex flex-col gap-6">
+
+              <!-- Hero Section -->
+              <div class="bg-white rounded-[10px] shadow-sm border border-gray-100 overflow-hidden">
+
+                <div class="p-8 md:p-12 bg-gradient-to-br from-gray-50 to-white border-b border-[#D4D4D4] mb-6">
+                  <h1 class="text-[28px] font-bold text-gray-900 tracking-tight mb-2">Documentation Center</h1>
+                  <p class="text-[16px] text-gray-500 font-medium">
+                    Everything you need to know about shipment statuses,
+                    delivery services, and packaging best practices.
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-6 mx-auto">
+                  <div
+                    class="bg-white rounded-[10px] border border-gray-200 p-6 flex flex-col shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-sm transition-shadow">
+                    <h3 class="text-[16px] font-semibold text-gray-900 tracking-tight">Shipment Status Guide</h3>
+                      <p class="mt-1 text-[14px] text-gray-500 leading-relaxed">Understand the shipment cycle.</p>
+                    <a href="#status-guide"
+                      class=" doc-scroll-link text-[14px] font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 transition-colors mt-6">
+                      Explore
+                    </a>
+                  </div>
+  
+                  <!-- Shipment & Tracking Card -->
+                  <div class="bg-white rounded-[10px] border border-gray-200 p-6 flex flex-col shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-sm transition-shadow">
+                    <h3 class="text-[17px] font-semibold text-gray-900 tracking-tight">Delivery Services</h3>
+                      <p class="mt-1 text-[14px] text-gray-500 leading-relaxed">Explore available service types.</p>
+                    <a href="#delivery-services"
+                      class="doc-scroll-link text-[14px] font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 transition-colors mt-6">
+                      Explore
+                    </a>
+                  </div>
+  
+                  <!-- Contact & Support Card -->
+                  <div class="bg-white rounded-[10px] border border-gray-200 p-6 flex flex-col shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-sm transition-shadow">
+                    <h3 class="text-[17px] font-semibold text-gray-900 tracking-tight">Packaging Guide</h3>
+                      <p class="mt-1 text-[14px] text-gray-500 leading-relaxed">Learn packaging best practices.</p>
+                    <a href="#packaging-guide"
+                      class="doc-scroll-link text-[14px] font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900 transition-colors mt-6">
+                      Explore
+                    </a>
+                  </div>
+                </div>
+              </div> 
+
+              <!-- Section 1: Shipment Status Guide -->
+              <div id="status-guide" class="bg-white rounded-[10px] shadow-sm border border-gray-100 p-6 md:p-8">
+                <div class="mb-8 border-b border-[#D4D4D4] pb-6">
+
+                  <h2 class="text-[20px] font-semibold text-gray-900 tracking-tight flex items-center gap-3">
+                    <img src="/maincontenticons/total.svg" alt="Types of Srvices"class="w-7 h-7 flex-shrink-0">
+                    Shipment Status Guide
+                  </h2>
+
+                  <p class=" text-[14px] text-gray-500 font-medium mt-2">
+                    A complete breakdown of the shipment lifecycle and what each status means.
+                  </p>
+
+                </div>
+
+                <div class="relative ml-2 md:ml-6 mt-4 mb-4">
+
+                  <!-- Timeline vertical line -->
+                  <div class="absolute top-3 bottom-3 left-[11px] w-[2px] bg-gray-100"></div>
+
+                  <div class="space-y-8 relative">
+
+                    <!-- 1. Pending -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#F93C3F] ring-4 ring-[#F93C3F]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                          Pending
+                          <span class="px-2 py-0.5 rounded-md bg-[#F93C3F]/10 text-[#F93C3F] text-[11px] font-semibold tracking-wide uppercase" >Start</span>
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment has been created and is awaiting review
+                          and verification.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 2. Accepted -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#4690FF] ring-4 ring-[#4690FF]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1">
+                          Accepted
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment has been reviewed and accepted for
+                          processing.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 3. Started Delivery -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#FFB22C] ring-4 ring-[#FFB22C]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1">
+                          Started Delivery
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment has left the origin facility and delivery
+                          operations have started.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 4. On Route -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#FFB22C] ring-4 ring-[#FFB22C]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1">
+                          On Route
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment is currently in transit between
+                          locations.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 5. Delayed -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#F93C3F] ring-4 ring-[#F93C3F]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1">
+                          Delayed
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment has encountered an unexpected delay.
+                          Delivery will resume once the issue is resolved.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 6. Delivery Resumed -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#4690FF] ring-4 ring-[#4690FF]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1">
+                          Delivery Resumed
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment is back on schedule and continues toward
+                          its destination.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 7. Delivered -->
+                    <div class="flex items-start gap-5">
+                      <div class="relative z-10 w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#32B66B] ring-4 ring-[#32B66B]/20"></div>
+                      </div>
+                      <div>
+                        <h3 class="text-[17px] font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                          Delivered
+                          <span class="px-2 py-0.5 rounded-md bg-[#32B66B]/10 text-[#32B66B] text-[11px] font-semibold tracking-wide uppercase">Completed</span>
+                        </h3>
+                        <p class="text-sm text-gray-500 font-normal">
+                          The shipment has successfully reached its destination
+                          and has been marked as completed.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Delivery Services -->
+              <div id="delivery-services" class="bg-white rounded-[10px] shadow-sm border border-gray-100 p-6 md:p-8">
+                <div class="mb-8 border-b border-[#D4D4D4] pb-6">
+
+                  <h2 class="text-[20px] font-semibold text-gray-900 tracking-tight flex items-center gap-3">
+                    <img src="/maincontenticons/typesofservices.svg" alt="Types of Srvices"class="w-7 h-7 flex-shrink-0">
+                    Delivery Services
+                  </h2>
+
+                  <p class=" text-[14px] text-gray-500 font-medium mt-2">
+                    Explore our available service types to find the best fit for
+                    your logistics needs.
+                  </p>
+
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+
+                  
+                  <!-- Standard Delivery -->
+                  <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow relative overflow-hidden bg-white">
+                    <div class="absolute top-0 right-0 p-4">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-100 text-gray-600">3-5 Days</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700 mb-5">
+                      <img src="/maincontenticons/standard.svg" class="w-5 h-5" alt="standard">
+                    </div>
+
+                    <h3 class="text-[17px] font-semibold text-gray-900 mb-2">Standard Delivery</h3>
+                    <p class="text-sm text-gray-500 font-medium mb-8 min-h-[40px]">Reliable shipping for routine and non urgent deliveries.</p>
+
+                    <ul class="space-y-3">
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/greycheck.svg" class="w-3.5 h-3.5" alt="standard">
+                        Affordable pricing
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/greycheck.svg" class="w-3.5 h-3.5" alt="standard">
+                        Reliable transit schedules
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/greycheck.svg" class="w-3.5 h-3.5" alt="standard">
+                        Suitable for everyday shipments
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Express Delivery -->
+                  <div class="border border-[#4690FF]/30 rounded-xl p-6 shadow-sm bg-blue-50/20 hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-[#4690FF]"></div>
+                    <div class="absolute top-0 right-0 p-4">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-100 text-[#4690FF]">1-2 Days</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-lg bg-[#4690FF]/10 border border-[#4690FF]/30 flex items-center justify-center text-[#4690FF] mb-5">
+                      <img src="/maincontenticons/express.svg" class="w-5 h-5" alt="express">
+                    </div>
+
+                    <h3 class="text-[17px] font-semibold text-gray-900 mb-2">Express Delivery</h3>
+                    <p class="text-sm text-gray-500 font-medium mb-8 min-h-[40px]">Faster shipping for urgent and time sensitive consignments.</p>
+                    
+                    <ul class="space-y-3">
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/bluecheck.svg" class="w-3.5 h-3.5" alt="express">
+                        Priority shipment handling
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/bluecheck.svg" class="w-3.5 h-3.5" alt="express">
+                        Reduced delivery time
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/bluecheck.svg" class="w-3.5 h-3.5" alt="express">
+                        Ideal for urgent consignments
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Fragile Cargo Transport -->
+                  <div class="border border-[#F93C3F]/30 rounded-xl p-6 shadow-sm bg-blue-50/20 hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-[#F93C3F]"></div>
+                    <div class="absolute top-0 right-0 p-4">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-[#F93C3F]/10 text-[#F93C3F]">Special Care</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-lg bg-[#F93C3F]/10 border border-[#F93C3F]/30 flex items-center justify-center text-[#F93C3F] mb-5">
+                      <img src="/maincontenticons/fragile.svg" class="w-6 h-6" alt="fragile">
+                    </div>
+
+                    <h3 class="text-[17px] font-semibold text-gray-900 mb-2">Fragile Cargo Transport</h3>
+                    <p class="text-sm text-gray-500 font-medium mb-8 min-h-[40px]">Secure transport for delicate and breakable items.</p>
+                    
+                    <ul class="space-y-3">
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/redcheck.svg" class="w-3.5 h-3.5" alt="fragile">
+                        Protective handling procedures
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/redcheck.svg" class="w-3.5 h-3.5" alt="fragile">
+                        Extra packaging safeguards
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/redcheck.svg" class="w-3.5 h-3.5" alt="fragile">
+                        Continuous shipment monitoring
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Heavy Haul Transport -->
+                  <div class="border border-[#FF8C22]/30 rounded-xl p-6 shadow-sm bg-blue-50/20 hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-[#FF8C22]"></div>
+                    <div class="absolute top-0 right-0 p-4">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-[#FF8C22]/10 text-[#FF8C22]">Oversized</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-lg bg-[#FF8C22]/10 border border-[#FF8C22]/30 flex items-center justify-center text-[#FF8C22] mb-5">
+                      <img src="/maincontenticons/heavy.svg" class="w-6 h-6" alt="heavy">
+                    </div>
+
+                    <h3 class="text-[17px] font-semibold text-gray-900 mb-2">Heavy Haul Transport</h3>
+                    <p class="text-sm text-gray-500 font-medium mb-8 min-h-[40px]">Specialized transport for oversized and heavy cargo.</p>
+                    
+                    <ul class="space-y-3">
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/orangetick.svg" class="w-3.5 h-3.5" alt="heavy">
+                        Supports oversized freight
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/orangetick.svg" class="w-3.5 h-3.5" alt="heavy">
+                        Specialized transport vehicles
+                      </li>
+                      <li class="flex items-center gap-2.5 text-sm text-gray-600 font-normal">
+                        <img src="/maincontenticons/orangetick.svg" class="w-3.5 h-3.5" alt="heavy">
+                        Managed logistics coordination
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Section 3: Packaging Guide -->
+              <div id="packaging-guide" class="bg-white rounded-[10px] shadow-sm border border-gray-100 p-6 md:p-8">
+                <div class="mb-8 border-b border-[#D4D4D4] pb-6">
+
+                  <h2 class="text-[20px] font-semibold text-gray-900 tracking-tight flex items-center gap-3">
+                    <img src="/maincontenticons/delivered.svg" alt="Types of Srvices"class="w-7 h-7 flex-shrink-0">
+                    Packaging Guide
+                  </h2>
+
+                  <p class=" text-[14px] text-gray-500 font-medium mt-2">
+                    Follow these best practices to ensure your items arrive safely.
+                  </p>
+
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                  <!-- Construction Materials -->
+                  <div class="flex flex-col sm:flex-row gap-5 p-6 rounded-xl border border-gray-100 bg-gray-50/50">
+                    <div class="w-12 h-12 shrink-0 rounded-full bg-white border border-[#858A93]/20 flex items-center justify-center text-gray-600 shadow-sm">
+                      <img src="/maincontenticons/construction.svg" class="w-4 h-4" alt="construction">
+                    </div>
+                    <div>
+                      <h3 class="text-[17px] font-semibold text-gray-900 mb-3">Construction Materials</h3>
+                      <ul class="space-y-2.5">
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 shrink-0"></span>
+                          Use reinforced packaging for heavy materials
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 shrink-0"></span>
+                          Secure loose components before transport
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-1.5 shrink-0" ></span>
+                          Protect cargo from moisture and dust
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Industrial Machinery -->
+                  <div class="flex flex-col sm:flex-row gap-5 p-6 rounded-xl border border-gray-100 bg-gray-50/50">
+                    <div class="w-12 h-12 shrink-0 rounded-full bg-white border border-[#858A93]/20 flex items-center justify-center text-gray-600 shadow-sm">
+                      <img src="/maincontenticons/industrialmachinery.svg" class="w-4 h-4" alt="industrialmachinery">
+                    </div>
+                    <div>
+                      <h3 class="text-[17px] font-semibold text-gray-900 mb-3">Industrial Machinery</h3>
+                      <ul class="space-y-2.5">
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#FF8C22]/50 mt-1.5 shrink-0"></span>
+                          Secure all moving mechanical components
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#FF8C22]/50 mt-1.5 shrink-0"></span>
+                          Use heavy duty restraints during transit
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#FF8C22]/50 mt-1.5 shrink-0" ></span>
+                          Verify load balance before dispatch
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Glass Panels -->
+                  <div class="flex flex-col sm:flex-row gap-5 p-6 rounded-xl border border-gray-100 bg-gray-50/50">
+                    <div class="w-12 h-12 shrink-0 rounded-full bg-white border border-[#858A93]/20 flex items-center justify-center text-gray-600 shadow-sm">
+                      <img src="/maincontenticons/glasspanels.svg" class="w-4 h-4" alt="glasspanels">
+                    </div>
+                    <div>
+                      <h3 class="text-[17px] font-semibold text-gray-900 mb-3">Glass Panels</h3>
+                      <ul class="space-y-2.5">
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#F93C3F]/50 mt-1.5 shrink-0"></span>
+                          Apply edge guards to prevent breakage
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#F93C3F]/50 mt-1.5 shrink-0"></span>
+                          Use foam cushioning for added protection
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#F93C3F]/50 mt-1.5 shrink-0" ></span>
+                          Clearly label shipments as fragile cargo
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Electronics -->
+                  <div class="flex flex-col sm:flex-row gap-5 p-6 rounded-xl border border-gray-100 bg-gray-50/50">
+                    <div class="w-12 h-12 shrink-0 rounded-full bg-white border border-[#858A93]/20 flex items-center justify-center text-gray-600 shadow-sm">
+                      <img src="/maincontenticons/electronics.svg" class="w-4 h-4" alt="Electronics">
+                    </div>
+                    <div>
+                      <h3 class="text-[17px] font-semibold text-gray-900 mb-3">Electronics</h3>
+                      <ul class="space-y-2.5">
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#4690FF]/50 mt-1.5 shrink-0"></span>
+                          Use anti-static packaging materials
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#4690FF]/50 mt-1.5 shrink-0"></span>
+                          Protect devices with shock absorbing cushioning
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                          <span class="w-1.5 h-1.5 rounded-full bg-[#4690FF]/50 mt-1.5 shrink-0" ></span>
+                          Pack cables and accessories separately
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Section 4: Shipping Recommendations -->
+              <div class="bg-white rounded-[10px] shadow-sm border border-gray-100 p-6 md:p-8">
+                <div class="mb-8 border-b border-[#D4D4D4] pb-6">
+
+                  <h2 class="text-[20px] font-semibold text-gray-900 tracking-tight flex items-center gap-3">
+                    <img src="/maincontenticons/delivered.svg" alt="Types of Srvices"class="w-7 h-7 flex-shrink-0">
+                    Shipping Recommendations
+                  </h2>
+
+                  <p class=" text-[14px] text-gray-500 font-medium mt-2">
+                    Checklists to ensure a smooth shipping experience.
+                  </p>
+
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                  <!-- Before Creating -->
+                  <div class="p-6 rounded-[10px] border border-gray-100 bg-white shadow-sm">
+                    <div class="flex items-center gap-3 mb-5">
+                      <div class="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600">
+                        <img src="/maincontenticons/one.svg" class="w-5 h-5" alt="Electronics">
+                      </div>
+                      <h3 class="text-[17px] font-semibold text-gray-900">Before Creating</h3>
+                    </div>
+
+                    <ul class="space-y-3.5">
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Validate sender and receiver details
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Confirm destination information
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Choose the correct delivery service
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Before Dispatch -->
+                  <div class="p-6 rounded-[10px] border border-gray-100 bg-white shadow-sm">
+                    <div class="flex items-center gap-3 mb-5">
+                      <div class="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600">
+                        <img src="/maincontenticons/two.svg" class="w-5 h-5" alt="Electronics">
+                      </div>
+                      <h3 class="text-[17px] font-semibold text-gray-900">Before Dispatch</h3>
+                    </div>
+
+                    <ul class="space-y-3.5">
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Inspect packaging integrity
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Verify shipment contents
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Ensure documentation is complete
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- During Transist -->
+                  <div class="p-6 rounded-[10px] border border-gray-100 bg-white shadow-sm">
+                    <div class="flex items-center gap-3 mb-5">
+                      <div class="w-10 h-10 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-600">
+                        <img src="/maincontenticons/three.svg" class="w-5 h-5" alt="Electronics">
+                      </div>
+                      <h3 class="text-[17px] font-semibold text-gray-900">During Transit</h3>
+                    </div>
+
+                    <ul class="space-y-3.5">
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Track shipment progress regularly
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Retain your consignment reference
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        Contact support if issues arise
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- PAGE TRANSITION ENDS -->
+
+    
+    <div id="pageTransition" class="fixed inset-0 z-[9999] bg-white/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center">
+      <div class="flex flex-col items-center gap-4">
+        <div
+          class="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#F93C3F] animate-spin"
+        ></div>
+        <p id="pageTransitionText" class="text-sm text-gray-500">Loading...</p>
+      </div>
+    </div>
+
+    <!-- .js file references -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    <script src="/js/transitions.js"></script>
+    <script src="/js/smooth-scroll.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shipment Not Found | Movexa</title>
+
+    <link rel="stylesheet" href="/css/output.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            opacity: 0;
+            transition: opacity 0.15s ease-out;
+        }
+        
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
+    <style>
+        #protectedContent {
+          opacity: 0;
+          transition: opacity 0.15s ease;
+        }
+      </style>
+</head>
+
+<body class="min-h-screen overflow-hidden bg-white flex items-center justify-center">
+
+    <div id="mobileWarning" class="hidden fixed inset-0 z-[99999] bg-[#F5F6F7] items-center justify-center p-8">
+        <div class="max-w-md text-center">
+          <img src="/assets/movexalogolight.png" class="h-5 mx-auto mb-8" alt="Movexa">
+  
+          <div class="flex justify-center mb-6">
+            <img src="/maincontenticons/desktop.svg" class="w-16 h-16" alt="desktop">
+          </div>
+  
+          <h1 class="text-[16px] font-bold text-[#2D2D2D] mb-4">
+              Desktop Experience Recommended
+          </h1>
+          <p class="text-gray-500 text-[14px] leading-relaxed">
+              Movexa is currently optimized for desktop and laptop devices.
+              Please access the platform using a screen width of at least 1024 pixels for the best experience.
+          </p>
+        </div>
+    </div>
+
+    <div id="protectedContent">
+
+        <div class="w-[360px] flex flex-col items-center text-center px-6">
+
+            <div class="w-[340px] h-[240px] flex items-center justify-center">
+
+                <lottie-player src="/animations/not-found.json" background="transparent" speed="1"
+                    style="width: 180px; height: 180px;" loop autoplay>
+                </lottie-player>
+
+            </div>
+
+            <h1 class="text-[24px] font-semibold text-[#1E1E1E]">
+                Shipment not found
+            </h1>
+
+            <p class="mt-2 text-[15px] text-[#858A93] leading-6">
+
+                The consignment ID doesn't exist.
+
+            </p>
+
+            <a href="/tracking"
+                class="mt-8 inline-flex items-center justify-center rounded-[10px] bg-[#F93C3F] px-6 py-3 text-[15px] font-medium text-white shadow-sm transition-colors hover:bg-red-500">
+
+                Search Again
+
+            </a>
+
+        </div>
+    </div>
+
+    
+    <script>
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+
+</body>
+
+</html>

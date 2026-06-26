@@ -1,0 +1,205 @@
+<!-- Tracking Page - tracking.html-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tracking | Movexa</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link rel="prefetch" href="/dashboard">
+    <link rel="prefetch" href="/tracking">
+    <link rel="prefetch" href="/shippingpage">
+    <link rel="prefetch" href="/support">
+    <link rel="prefetch" href="/usage-policy">
+
+    <link rel="stylesheet" href="/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <style>
+      #protectedContent {
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#F5F6F7] text-gray-900 antialiased flex h-screen overflow-hidden">
+
+    <div id="mobileWarning" class="hidden fixed inset-0 z-[99999] bg-[#F5F6F7] items-center justify-center p-8">
+      <div class="max-w-md text-center">
+        <img src="/assets/movexalogolight.png" class="h-5 mx-auto mb-8" alt="Movexa">
+
+        <div class="flex justify-center mb-6">
+          <img src="/maincontenticons/desktop.svg" class="w-16 h-16" alt="desktop">
+        </div>
+
+        <h1 class="text-[16px] font-bold text-[#2D2D2D] mb-4">
+            Desktop Experience Recommended
+        </h1>
+        <p class="text-gray-500 text-[14px] leading-relaxed">
+            Movexa is currently optimized for desktop and laptop devices.
+            Please access the platform using a screen width of at least 1024 pixels for the best experience.
+        </p>
+      </div>
+    </div>
+
+    <div id="protectedContent" class="flex h-full w-full">
+    
+      <!-- STARTS LEFT SIDE MENU BAR -->
+      <aside
+        class="w-[260px] bg-[#2D2D2D] text-gray-300 hidden lg:flex flex-col flex-shrink-0 h-full z-20">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden hide-scrollbar">
+
+          <!-- LEFT SIDE MENU BAR - LOGO: movexa -->
+          <div class="h-24 flex items-center px-8 mb-2">
+            <div class="flex gap-3 text-2xl font-medium text-white tracking-tight items-center">
+              <img
+                src="/assets/movexalogodark.png" alt="movexaLogo" class="h-4 w-auto object-contain">
+            </div>
+          </div>
+
+          <!-- LEFT SIDE MENU BAR - MENU NAVIGATION -->
+          <nav class="px-4 space-y-1.5">
+            <a href="/dashboard"
+            class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/dasboardicon.svg" class="w-5 h-5" alt="dashboard">
+              Dashboard
+            </a>
+            <a href="/shippingpage"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/shippingicon.svg" class="w-5 h-5" alt="shipping">
+              Shipping
+            </a>
+            <a href="/tracking"
+              class="flex items-center gap-4 px-4 py-3 mr-[-16px] rounded-l-[8px] text-[15px] bg-[#F93C3F] font-semibold text-white shadow-sm transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/trackingicon.svg" class="w-5 h-5" alt="tracking">
+              Tracking
+            </a>
+            <a href="/delivery-coverage-shipping-rates"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/expense.svg" class="w-5 h-5" alt="Expense">
+              Delivery Rates
+            </a>
+            <a href="/support"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/chat.svg" class="w-5 h-5" alt="chatsupport">
+              Support
+            </a>
+            <a href="/usage-policy"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/termsofuse.svg" class="w-5 h-5" alt="termsofuse">
+              Usage Policy
+            </a>
+          </nav>
+
+        </div>
+
+        <!-- LEFT SIDE MENU BAR - ACCOUNT + LOG OUT CARD-->
+        <div class="bg-[#252525] px-5 py-6">
+          <div class="flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+              <img id="sidebarAvatar" src="/maincontenticons/profile.svg" alt="User Avatar" class="w-9 h-9 rounded-full object-cover">
+              <span id="sidebarFirstName" class="text-sm max-w-[80px] font-medium text-white truncate">User</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+
+              <a href="https://movexalogistics.betteruptime.com/" target="_blank" class="flex items-center">
+                <button type="button">
+                  <img src="/sidebarIcons/betterstack.svg" class="w-9 h-9 block" alt="Better Stack">
+                </button>
+              </a>
+              <button id="logoutBtn" type="button">
+                <img src="/sidebarIcons/logouticon.svg" class="w-9 h-9" alt="termsofuse">
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </aside>
+      <!-- ENDS LEFT SIDE MENU BAR -->
+
+      <!-- PAGE TRANSITION STARTS -->
+      <div id="pageContent" class="flex h-full w-full opacity-0 translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+        <!-- STARTS RIGHT SIDE CONTENT -->
+        <main class="flex-1 flex flex-col h-full overflow-y-auto hide-scrollbar w-full relative z-10">
+          <div class="flex-1 flex flex-col items-center justify-center h-full w-full p-6">
+
+
+            
+            <div>
+              <img src="/maincontenticons/track.svg" class="w-14 h-14 mb-4" alt="tracking">
+            </div>
+            
+            <h1 class="text-[28px] font-bold tracking-tight text-gray-900">Track your shipments</h1>
+            <p class="text-[#858A93] font-normal text-[17px] mb-8">Enter consignment ID</p>
+
+            <form id="trackingForm" class="w-full max-w-[440px]">
+              <div class="relative mb-4">
+                <input id="trackingInput" type="text" placeholder="MVX-xxxx..." autocomplete="off" class="w-full border border-[#CDD5DF] rounded-[10px] pl-4 pr-4 py-2.5 text-[16px] focus:outline-none bg-white">
+              </div>
+            
+              <div class="flex justify-center">
+                <button type="submit" 
+                  class="bg-[#F93C3F] text-white px-6 py-2.5 rounded-[8px] text-[15px] font-medium hover:bg-red-500 transition-colors shadow-sm">
+                  Search
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </main>
+        <!-- ENDS: MAIN -->
+
+      </div>
+    </div>
+    <!-- PAGE TRANSITION ENDS -->
+     
+    <div id="pageTransition" class="fixed inset-0 z-[9999] bg-white/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#F93C3F] animate-spin"></div>
+        <p id="pageTransitionText" class="text-sm text-gray-500">Loading...</p>
+      </div>
+    </div>
+
+    <!-- .js file references -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    <script src="/js/transitions.js"></script>
+    <script src="/js/tracking.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+ 
+  </body>
+
+</html>

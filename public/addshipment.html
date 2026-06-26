@@ -1,0 +1,806 @@
+<!-- Add Shipment Page - addhshipment.html-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add New Shipment | Movexa</title>
+
+    <link rel="stylesheet" href="/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link rel="prefetch" href="/dashboard">
+    <link rel="prefetch" href="/tracking">
+    <link rel="prefetch" href="/shippingpage">
+    <link rel="prefetch" href="/support">
+    <link rel="prefetch" href="/usage-policy">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <style>
+        #protectedContent {
+          opacity: 0;
+          transition: opacity 0.15s ease;
+        }
+      </style>
+  </head>
+
+  <body class="bg-[#F5F6F7] text-gray-900 antialiased flex h-screen overflow-hidden">
+
+    <div id="mobileWarning" class="hidden fixed inset-0 z-[99999] bg-[#F5F6F7] items-center justify-center p-8">
+        <div class="max-w-md text-center">
+          <img src="/assets/movexalogolight.png" class="h-5 mx-auto mb-8" alt="Movexa">
+  
+          <div class="flex justify-center mb-6">
+            <img src="/maincontenticons/desktop.svg" class="w-16 h-16" alt="desktop">
+          </div>
+  
+          <h1 class="text-[16px] font-bold text-[#2D2D2D] mb-4">
+              Desktop Experience Recommended
+          </h1>
+          <p class="text-gray-500 text-[14px] leading-relaxed">
+              Movexa is currently optimized for desktop and laptop devices.
+              Please access the platform using a screen width of at least 1024 pixels for the best experience.
+          </p>
+        </div>
+    </div>
+
+    <div id="protectedContent" class="flex h-full w-full">
+
+        <!-- STARTS LEFT SIDE MENU BAR -->
+        <aside
+        class="w-[260px] bg-[#2D2D2D] text-gray-300 hidden lg:flex flex-col flex-shrink-0 h-full z-20">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden hide-scrollbar">
+
+            <!-- LEFT SIDE MENU BAR - LOGO: movexa -->
+            <div class="h-24 flex items-center px-8 mb-2">
+            <div class="flex gap-3 text-2xl font-medium text-white tracking-tight items-center">
+                <img
+                src="/assets/movexalogodark.png" alt="movexaLogo" class="h-4 w-auto object-contain">
+            </div>
+            </div>
+
+            <!-- LEFT SIDE MENU BAR - MENU NAVIGATION -->
+            <nav class="px-4 space-y-1.5">
+            <a href="/dashboard"
+            class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/dasboardicon.svg" class="w-5 h-5" alt="dashboard">
+                Dashboard
+            </a>
+            <a href="/shippingpage"
+            class="flex items-center gap-4 px-4 py-3 mr-[-16px] rounded-l-[8px] text-[15px] bg-[#F93C3F] font-semibold text-white shadow-sm transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/shippingicon.svg" class="w-5 h-5" alt="shipping">
+                Shipping
+            </a>
+            <a href="/tracking"
+                class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/trackingicon.svg" class="w-5 h-5" alt="tracking">
+                Tracking
+            </a>
+            <a href="/delivery-coverage-shipping-rates"
+                class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/expense.svg" class="w-5 h-5" alt="Expense">
+                Delivery Rates
+            </a>
+            <a href="/support"
+                class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/chat.svg" class="w-5 h-5" alt="chatsupport">
+                Support
+            </a>
+            <a href="/usage-policy"
+                class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+                <img src="/sidebarIcons/termsofuse.svg" class="w-5 h-5" alt="termsofuse">
+                Usage Policy
+            </a>
+            </nav>
+
+        </div>
+
+        <!-- LEFT SIDE MENU BAR - ACCOUNT + LOG OUT CARD-->
+        <div class="bg-[#252525] px-5 py-6">
+            <div class="flex items-center justify-between">
+  
+              <div class="flex items-center gap-2">
+                <img id="sidebarAvatar" src="/maincontenticons/profile.svg" alt="User Avatar" class="w-9 h-9 rounded-full object-cover">
+                <span id="sidebarFirstName" class="text-sm max-w-[80px] font-medium text-white truncate">User</span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+  
+                <a href="https://movexalogistics.betteruptime.com/" target="_blank" class="flex items-center">
+                    <button type="button">
+                      <img src="/sidebarIcons/betterstack.svg" class="w-9 h-9 block" alt="Better Stack">
+                    </button>
+                </a>
+                <button id="logoutBtn" type="button">
+                  <img src="/sidebarIcons/logouticon.svg" class="w-9 h-9" alt="termsofuse">
+                </button>
+  
+              </div>
+            </div>
+          </div>
+
+        </aside>
+        <!-- ENDS LEFT SIDE MENU BAR -->
+
+        <!-- PAGE TRANSITION STARTS -->
+        <div id="pageContent" class="flex h-full w-full opacity-0 translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+        <!-- STARTS RIGHT SIDE CONTENT -->
+        <main class="flex-1 flex flex-col h-full overflow-y-auto hide-scrollbar w-full relative z-10">
+            <div class="p-6 md:p-10 max-w-[1600px] mx-auto w-full">
+                <div id="shipmentFormSection"></div>
+
+                <!-- HEADER SECTION - SHIPPING -->
+                <header class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+                    <div>
+                        <h1 class="text-[28px] font-bold tracking-tight text-gray-900 mb-2">Add New Shipment</h1>
+                        <div class="flex items-center gap-2 text-[12px] text-gray-500 font-normal">
+                            <span>Shipping</span>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gray-400" stroke-width="1.5"></i>
+                            <span>Add New Shipment</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- PROMOTIONAL BANNER -->
+                <div class="mt-6 mb-6 overflow-hidden rounded-[10px] border border-gray-100 shadow-sm">
+                    <img src="/assets/banner2.webp" alt="Movexa Shipping Banner" class="w-full h-auto object-cover">
+                </div>
+
+                <!-- Header Details -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                    <div>
+                        <div class="text-[17px] font-semibold text-gray-900 mb-1">Carefully fill out the details</div>
+                        <div class="text-[14px] text-gray-500 font-normal">The total price is determined by the distance and weight of the shipment.</div>
+                    </div>
+                    <div id="message" class="hidden">
+                    </div>
+                    <button id="generateBtn" type="button"
+                        class="bg-[#ff4444] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-red-500 transition-colors whitespace-nowrap shadow-sm">
+                        Validate &amp; Generate Consignment ID
+                    </button>
+                </div>
+
+                <!-- Add Shipment Form Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+
+                    <!-- Shipping From -->
+                    <div class="bg-white rounded-[10px] border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-6 md:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                        <img src="/maincontenticons/sender.svg" alt="Shipping From"class="w-7 h-7 flex-shrink-0">
+                        <h2 class="text-[17px] font-semibold text-gray-900 leading-none m-0">Shipping From</h2>
+                        </div>
+
+                        <div class="h-px bg-[#D4D4D4] -mx-6 md:-mx-8 mt-4 mb-6"></div>
+
+                        <div class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                <!-- Sender Name -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Sender Name<span
+                                            class="text-red-500 ml-0.5">*</span></label>
+                                    <input id="senderName" type="text" maxlength="30" required
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="senderNameError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+
+                                <!-- Sender Mobile -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Mobile / Landline
+                                        Number<span class="text-red-500 ml-0.5">*</span></label>
+                                    <input id="senderPhone" type="tel" maxlength="11" pattern="[0-9]*" inputmode="numeric"
+                                        required oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="senderPhoneError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+                                </div>
+
+                                <!-- Sender Address -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Address Line (House number,
+                                        Street number, Locality)<span class="text-red-500 ml-0.5">*</span></label>
+                                    <textarea id="senderAddress" rows="2" maxlength="200" required
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-3 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow resize-none"></textarea>
+                                    <p id="senderAddressError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                <!-- Sender Country -->
+                                <div class="relative">
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">
+                                        Select Country<span class="text-red-500 ml-0.5">*</span>
+                                    </label>
+
+                                    <div id="fromCountryDropdown" required
+                                        class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                        <span id="fromCountrySelected" class="text-base text-gray-700">
+                                            Select Country
+                                        </span>
+
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+
+                                    <div id="fromCountryOptions"
+                                        style="max-height: 250px; overflow-y: auto;" class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="austria">Austria</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="belgium">Belgium</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="bulgaria">Bulgaria</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="croatia">Croatia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="czechia">Czechia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="denmark">Denmark</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="estonia">Estonia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="finland">Finland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="france">France</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="germany">Germany</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="greece">Greece</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="hungary">Hungary</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="iceland">Iceland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="ireland">Ireland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="italy">Italy</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="latvia">Latvia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="lithuania">Lithuania</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="luxembourg">Luxembourg</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="netherlands">Netherlands</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="norway">Norway</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="poland">Poland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="portugal">Portugal</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="romania">Romania</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="slovakia">Slovakia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="slovenia">Slovenia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="spain">Spain</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="sweden">Sweden</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="switzerland">Switzerland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="turkey">Turkey</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="uk">United Kingdom</div>
+                                    </div>
+                                </div>
+
+                                <!-- Sender City --> 
+                                <div class="relative">
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">
+                                        Select City<span class="text-red-500 ml-0.5">*</span>
+                                    </label>
+
+                                    <div id="fromCityDropdown" required
+                                        class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                        <span id="fromCity" class="text-base text-gray-700">
+                                            Select City
+                                        </span>
+
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+
+                                    <div id="fromCityOptions"
+                                        class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                                    </div>
+                                </div>
+
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                    <!-- Sender Pincode -->
+                                    <div>
+                                        <label class="block text-sm font-normal text-gray-800 mb-2">Enter Pin code<span
+                                                class="text-red-500 ml-0.5">*</span></label>
+                                        <input id="senderPincode" type="text" maxlength="6" inputmode="numeric" required
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                            class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                        <p id="senderPincodeError" class="hidden mt-1 text-sm text-red-500"></p>
+                                    </div>
+
+                                    <!-- Sender Landmark -->
+                                    <div>
+                                        <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark</label>
+                                        <input id="senderLandmark" type="text" maxlength="40" required
+                                            class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                        <p id="senderLandmarkError" class="hidden mt-1 text-sm text-red-500"></p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping To -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-6 md:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                        <img src="/maincontenticons/receiver.svg" alt="Shipping To"class="w-7 h-7 flex-shrink-0">
+                        <h2 class="text-[17px] font-semibold text-gray-900 leading-none m-0">Shipping To</h2>
+                        </div>
+
+                        <div class="h-px bg-[#D4D4D4] -mx-6 md:-mx-8 mt-4 mb-6"></div>
+
+                        <div class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                <!-- Reciever Name -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Receiver Name<span
+                                            class="text-red-500 ml-0.5">*</span></label>
+                                    <input id="receiverName" type="text" maxlength="30" required
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="receiverNameError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+
+                                <!-- Reciever Mobile Number -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Mobile / Landline
+                                        Number<span class="text-red-500 ml-0.5">*</span></label>
+                                    <input id="receiverPhone" type="tel" maxlength="11" pattern="[0-9]*" inputmode="numeric"
+                                        required oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="receiverPhoneError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+                            </div>
+
+                            <!-- Reciever Address -->
+                            <div>
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Address Line (House number,
+                                    Street number, Locality)<span class="text-red-500 ml-0.5">*</span></label>
+                                <textarea id="receiverAddress" rows="2" maxlength="200" required
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-3 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow resize-none"></textarea>
+                                <p id="receiverAddressError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                <!-- Reciever Country -->
+                                <div class="relative">
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">
+                                        Select Country<span class="text-red-500 ml-0.5">*</span>
+                                    </label>
+
+                                    <div id="toCountryDropdown" required
+                                        class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                        <span id="toCountrySelected" class="text-base text-gray-700">
+                                            Select Country
+                                        </span>
+
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+
+                                    <div id="toCountryOptions"
+                                        style="max-height: 250px; overflow-y: auto;" class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="austria">Austria</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="belgium">Belgium</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="bulgaria">Bulgaria</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="croatia">Croatia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="czechia">Czechia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="denmark">Denmark</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="estonia">Estonia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="finland">Finland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="france">France</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="germany">Germany</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="greece">Greece</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="hungary">Hungary</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="iceland">Iceland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="ireland">Ireland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="italy">Italy</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="latvia">Latvia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="lithuania">Lithuania</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="luxembourg">Luxembourg</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="netherlands">Netherlands</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="norway">Norway</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="poland">Poland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="portugal">Portugal</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="romania">Romania</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="slovakia">Slovakia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="slovenia">Slovenia</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="spain">Spain</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="sweden">Sweden</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="switzerland">Switzerland</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="turkey">Turkey</div>
+                                        <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer" data-value="uk">United Kingdom</div>
+                                    </div>
+                                </div>
+
+                                <!-- Reciever City -->
+                                <div class="relative">
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">
+                                        Select City<span class="text-red-500 ml-0.5">*</span>
+                                    </label>
+
+                                    <div id="toCityDropdown" required
+                                        class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                        <span id="toCity" class="text-base text-gray-700">
+                                            Select City
+                                        </span>
+
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+
+                                    <div id="toCityOptions"
+                                        class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                                <!-- Reciever Pin Code -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Enter Pin code<span
+                                            class="text-red-500 ml-0.5">*</span></label>
+                                    <input id="receiverPincode" type="text" maxlength="6" inputmode="numeric" required
+                                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="receiverPincodeError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+
+                                <!-- Reciever Landmark -->
+                                <div>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark</label>
+                                    <input id="receiverLandmark" type="text" maxlength="40" required
+                                        class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                    <p id="receiverLandmarkError" class="hidden mt-1 text-sm text-red-500"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipment Details -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-6 md:p-8 mb-6">
+                    <div class="flex items-center gap-3 mb-6">
+                    <img src="/maincontenticons/shipmentdetails.svg" alt="Shippment Details"class="w-6 h-6 flex-shrink-0">
+                    <h2 class="text-[17px] font-semibold text-gray-900 leading-none m-0">Shipment Details</h2>
+                    </div>
+
+                    <div class="h-px bg-[#D4D4D4] -mx-6 md:-mx-8 mt-4 mb-6"></div>
+
+                    <div class="flex flex-col lg:flex-row gap-5 mb-5">
+                        <div class="flex-1 lg:min-w-[300px] relative">
+
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Select an Item<span class="text-red-500 ml-0.5">*</span>
+                            </label>
+
+                            <div id="itemDropdown" requiredrequired
+                                class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                <span id="itemSelected" class="text-base text-gray-700">
+                                    Select an Item
+                                </span>
+
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
+                            </div>
+
+                            <div id="itemOptions"
+                                class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Construction Materials
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Glass Panels
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Industrial Machinery
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Electronics
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-wrap sm:flex-nowrap gap-5 w-full lg:w-auto">
+
+                            <!-- Number of Item (Quantity) -->
+                            <div class="w-full sm:w-28">
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Number of Items</label>
+                                <input id="numItems" type="number" maxlength="3" inputmode="numeric" required
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                <p id="quantityError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+
+                            <!-- Weight -->
+                            <div class="w-full sm:w-28">
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Weight (kgs)<span
+                                        class="text-red-500 ml-0.5">*</span></label>
+                                <input id="weight" type="number" maxlength="3" inputmode="numeric" required
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                <p id="weightError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+
+                            <!-- Length -->
+                            <div class="w-full sm:w-24">
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Length (m)</label>
+                                <input id="length" type="number" maxlength="3" inputmode="numeric" required
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                <p id="lengthError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+
+                            <!-- Width-->
+                            <div class="w-full sm:w-24">
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Width (m)</label>
+                                <input id="width" type="number" maxlength="3" inputmode="numeric" required
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                <p id="widthError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+
+                            <!-- Height -->
+                            <div class="w-full sm:w-24">
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Height (m)</label>
+                                <input id="height" type="number" maxlength="3" inputmode="numeric" required
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                                <p id="heightError" class="hidden mt-1 text-sm text-red-500"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Description -->
+                    <div>
+                        <label class="block text-sm font-normal text-gray-800 mb-2">Content Description</label>
+                        <input id="description" type="text" maxlength="300" required
+                            class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-500 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                        <p id="descriptionError" class="hidden mt-1 text-sm text-red-500"></p>
+                    </div>
+                </div>
+
+                <!-- Type Of Service -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-6 md:p-8 mb-6">
+                    <div class="flex items-center gap-3 mb-6">
+                    <img src="/maincontenticons/typesofservices.svg" alt="Types of Srvices"class="w-7 h-7 flex-shrink-0">
+                    <h2 class="text-[17px] font-semibold text-gray-900 leading-none m-0">Choose Services</h2>
+                    </div>
+
+                    <div class="h-px bg-[#D4D4D4] -mx-6 md:-mx-8 mt-4 mb-6"></div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                        <div class="relative">
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Type of Service<span class="text-red-500 ml-0.5">*</span>
+                            </label>
+
+                            <div id="serviceDropdown"
+                                class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                <span id="serviceSelected" class="text-base text-gray-700">
+                                    Select
+                                </span>
+
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
+                            </div>
+
+                            <div id="serviceOptions" required
+                                class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Standard Delivery
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Express Delivery
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Fragile Cargo Transport
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Heavy Haul Transport
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Additional Service -->
+                        <div class="relative">
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Additional Service
+                            </label>
+
+                            <div id="additionalServiceDropdown"
+                                class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                <span id="additionalServiceSelected" class="text-base text-gray-700">
+                                    Select
+                                </span>
+
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
+                            </div>
+
+                            <div id="additionalServiceOptions"
+                                class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Cargo Insurance
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Priority Handling
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Escort Vehicle Service
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Roadside Assistance
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Type of delivery -->
+                        <div class="relative">
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Type of Delivery<span class="text-red-500 ml-0.5">*</span>
+                            </label>
+
+                            <div id="deliveryDropdown" required
+                                class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                <span id="deliverySelected" class="text-base text-gray-700">
+                                    Select
+                                </span>
+
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
+                            </div>
+
+                            <div id="deliveryOptions"
+                                class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Domestic
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    International
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Total Amount -->
+                        <div>
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Total Amount
+                            </label>
+
+                            <input type="text" id="totalAmount" value="€ 0" readonly
+                                class="w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
+                        </div>
+
+                        <!-- Mode of Payment -->
+                        <div class="relative">
+                            <label class="block text-sm font-normal text-gray-800 mb-2">
+                                Mode of Payment<span class="text-red-500 ml-0.5">*</span>
+                            </label>
+
+                            <div id="paymentDropdown" required
+                                class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
+
+                                <span id="paymentSelected" class="text-base text-gray-700">
+                                    Select
+                                </span>
+
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
+                            </div>
+
+                            <div id="paymentOptions"
+                                class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Cash
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Digital Wallet
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Debit Card
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Credit Card
+                                </div>
+
+                                <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Net Banking
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Any Special Instructions -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-6 md:p-8 mb-8">
+                    <div class="flex items-center gap-3 mb-6">
+                    <img src="/maincontenticons/specialinstructions.svg" alt="specialinstructions"class="w-7 h-7 flex-shrink-0">
+                    <h2 class="text-[17px] font-medium text-gray-900 leading-none m-0">Special Instructions (if any)</h2>
+                    </div>
+
+                    <div class="h-px bg-[#D4D4D4] -mx-6 md:-mx-8 mt-4 mb-6"></div>
+
+                    <textarea id="specialInstructions" rows="3" maxlength="300"
+                        class="w-full border border-[#CDD5DF] rounded-lg px-4 py-3.5 text-base text-gray-500 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow resize-none placeholder:text-gray-400"
+                        placeholder="Any special instructions provided by the sender, such as &quot;Handle with care,&quot; &quot;Do not bend,&quot; etc."></textarea>
+                    <p id="specialInstructionsError" class="hidden mt-1 text-sm text-red-500"></p>
+                </div>
+
+                <div class="h-px bg-gray-100 -mx-6 md:-mx-8 mt-2 mb-4"></div>
+                    <p class="max-w-2xl mx-auto text-sm text-gray-500 text-center mb-4">
+                    Please verify all shipment details before submitting.
+                    </p>
+                <div class="space-y-5">
+
+            </div>
+            </div>
+        </main>
+        </div>
+    </div>
+    <!-- PAGE TRANSITION ENDS -->
+     
+    <div id="pageTransition" class="fixed inset-0 z-[9999] bg-white/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#F93C3F] animate-spin"></div>
+        <p id="pageTransitionText" class="text-sm text-gray-500">Loading...</p>
+      </div>
+    </div>
+
+
+    <div id="toast"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden px-6 py-4 rounded-lg shadow-lg text-white z-50">
+    </div>
+
+
+      <!-- .js file references -->
+      <script>
+          lucide.createIcons();
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="/js/supabase.js"></script>
+      <script src="/js/auth-guard.js"></script>
+      <script src="/js/transitions.js"></script>
+      <script src="/js/shipment.js"></script>
+      <script src="/js/logout.js"></script>
+      <script src="/js/profile.js"></script>
+
+  </body>
+
+</html>

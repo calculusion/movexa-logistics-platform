@@ -1,0 +1,62 @@
+{
+  "cleanUrls": true,
+
+  "rewrites": [
+    {
+      "source": "/redirect",
+      "destination": "/client/public/redirect.html"
+    },
+    {
+      "source": "/operator",
+      "destination": "/client/public/operator.html"
+    },
+    {
+      "source": "/customer",
+      "destination": "/client/public/dashboard.html"
+    },
+    {
+      "source": "/401",
+      "destination": "/client/public/401.html"
+    },
+    {
+      "source": "/loading",
+      "destination": "/client/public/loading.html"
+    },
+    {
+      "source": "/no-shipment",
+      "destination": "/client/public/no-shipment.html"
+    },
+    {
+      "source": "/shipment-processing",
+      "destination": "/shipment-processing.html"
+    }
+  ],
+
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://*.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.supabase.co https://i.pravatar.cc https://lh3.googleusercontent.com https://*.googleusercontent.com; connect-src 'self' https://*.supabase.co https://*.vercel.app https://unpkg.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}

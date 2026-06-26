@@ -1,0 +1,647 @@
+<!-- Operator Dashboard - dashboard.html-->
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Operator Dashboard | Movexa</title>
+
+    <link rel="stylesheet" href="/css/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#F5F6F7] text-gray-900 antialiased flex h-screen overflow-hidden"
+  >
+    <div id="operatorContent" class="hidden flex h-full w-full">
+      <!-- STARTS LEFT SIDE MENU BAR -->
+      <aside
+        class="w-[260px] bg-[#2D2D2D] text-gray-300 hidden lg:flex flex-col flex-shrink-0 h-full z-20"
+      >
+        <div class="flex-1 overflow-y-auto overflow-x-hidden hide-scrollbar">
+          <!-- LEFT SIDE MENU BAR - LOGO: movexa -->
+          <div class="h-24 flex items-center px-8 mb-2">
+            <div
+              class="flex gap-3 text-2xl font-medium text-white tracking-tight items-center"
+            >
+              <img
+                src="/assets/movexalogodark.png"
+                alt="movexaLogo"
+                class="h-4 w-auto object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- LEFT SIDE MENU BAR - MENU NAVIGATION -->
+          <nav class="px-4 space-y-1.5">
+            <a
+              href="/operator"
+              class="flex items-center gap-4 px-4 py-3 mr-[-16px] rounded-l-[8px] text-[15px] bg-[#F93C3F] font-semibold text-white shadow-sm transition-colors"
+            >
+              <img
+                src="/sidebarIcons/dasboardicon.svg"
+                class="w-5 h-5"
+                alt="dashboard"
+              />
+              Dashboard
+            </a>
+          </nav>
+        </div>
+
+        <!-- LEFT SIDE MENU BAR - ACCOUNT + LOG OUT CARD-->
+        <div class="bg-[#252525] px-5 py-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <img
+                id="sidebarAvatar"
+                src="/maincontenticons/profile.svg"
+                alt="User Avatar"
+                class="w-9 h-9 rounded-full object-cover"
+              />
+              <span
+                id="sidebarFirstName"
+                class="text-sm max-w-[80px] font-medium text-white truncate"
+                >User</span
+              >
+            </div>
+
+            <div class="flex items-center gap-2">
+              <a href="https://movexalogistics.betteruptime.com/" target="_blank" class="flex items-center">
+                <button type="button">
+                  <img src="/sidebarIcons/betterstack.svg" class="w-9 h-9 block" alt="Better Stack">
+                </button>
+              </a>
+              <button id="logoutBtn" type="button">
+                <img
+                  src="/sidebarIcons/logouticon.svg"
+                  class="w-9 h-9"
+                  alt="termsofuse"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- ENDS LEFT SIDE MENU BAR -->
+
+      <!-- PAGE TRANSITION STARTS -->
+      <div
+        id="pageContent"
+        class="flex h-full w-full opacity-0 translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      >
+        <!-- MAIN CONTENT - STARTS -->
+        <main class="flex-1 flex h-full overflow-hidden w-full relative z-10">
+          <!-- MAIN CONTENT - SIDE BAR: Shipment list -->
+          <div
+            class="w-[380px] bg-[#222222] text-white flex flex-col h-full flex-shrink-0 relative z-20 shadow-2xl border-r border-[#333]"
+          >
+            <div class="p-6 pb-4 flex items-center justify-between">
+              <h1 class="text-xl font-semibold tracking-tight">
+                Shipment List
+              </h1>
+            </div>
+
+            <div class="px-6 pb-5">
+              <div class="flex gap-2.5">
+                <div class="relative flex-1">
+                  <input
+                    id="shipmentSearch"
+                    type="text"
+                    placeholder="Enter Consignment ID"
+                    class="w-full bg-[#181818] border border-[#333] rounded-lg pl-4 pr-4 py-2.5 text-[13px] text-gray-300 placeholder:text-gray-600 focus:outline-none focus:border-gray-500 transition-colors"
+                  />
+                </div>
+
+                <div class="relative">
+                  <button
+                    id="filterBtn"
+                    class="bg-[#181818] border border-[#333] rounded-lg px-2.5 py-2.5 hover:bg-[#2a2a2a] transition-colors flex items-center justify-center"
+                  >
+                    <i
+                      data-lucide="list-filter"
+                      class="w-4 h-4 text-gray-400"
+                      stroke-width="1.5"
+                    ></i>
+                  </button>
+
+                  <div
+                    id="filterMenu"
+                    class="hidden absolute top-full right-0 mt-2 w-40 bg-[#181818] border border-[#333] rounded-lg shadow-lg z-50"
+                  >
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="all"
+                    >
+                      All
+                    </button>
+
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="Pending"
+                    >
+                      Pending
+                    </button>
+
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="Accepted"
+                    >
+                      Accepted
+                    </button>
+
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="On Route"
+                    >
+                      On Route
+                    </button>
+
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="Delayed"
+                    >
+                      Delayed
+                    </button>
+
+                    <button
+                      class="filter-option block w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2a2a2a]"
+                      data-status="Delivered"
+                    >
+                      Delivered
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="shipmentList"
+              class="flex-1 overflow-y-auto px-6 pb-6 space-y-3.5 hide-scrollbar"
+            ></div>
+          </div>
+
+          <!-- MAIN CONTENT - RIGHT SIDE DETAILED SHIPMENT -->
+          <div class="flex-1 bg-[#f7f8fa] overflow-y-auto p-8 text-gray-900">
+            <div
+              id="emptyState"
+              class="h-full flex flex-col items-center justify-center text-center"
+            >
+              <img
+                src="/maincontenticons/track.svg"
+                alt="Select shipment"
+                class="w-14 h-14 mb-4"
+              />
+              <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                Select a Shipment
+              </h2>
+              <p class="text-sm text-gray-500 max-w-sm">
+                Choose a shipment from the list to view shipment details.
+              </p>
+            </div>
+
+            <div id="shipmentDetails" class="hidden">
+              <div
+                class="flex flex-col sm:flex-row sm:items-start justify-between mb-6 gap-4"
+              >
+                <div>
+                  <div class="text-[14px] text-gray-500 font-medium mb-1">
+                    Consignment ID
+                  </div>
+
+                  <div
+                    id="consignmentId"
+                    class="text-[22px] font-semibold tracking-tight text-gray-900"
+                  ></div>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="flex items-center gap-2">
+                  <button
+                    id="acceptJobBtn"
+                    class="hidden px-4 py-2.5 rounded-md text-[13px] font-medium text-white bg-[#3b82f6] shadow-sm hover:bg-blue-600 transition-colors"
+                  >
+                    Accept Job
+                  </button>
+
+                  <button
+                    id="startDeliveryBtn"
+                    class="hidden px-4 py-2.5 rounded-md text-[13px] font-medium text-white bg-[#f97316] shadow-sm hover:bg-orange-600 transition-colors"
+                  >
+                    Start Delivery
+                  </button>
+
+                  <button
+                    id="markDeliveredBtn"
+                    class="hidden px-4 py-2.5 rounded-md text-[13px] font-medium text-white bg-[#22c55e] shadow-sm hover:bg-green-600 transition-colors"
+                  >
+                    Mark Delivered
+                  </button>
+                </div>
+              </div>
+
+              <!-- SENDER -->
+              <div
+                class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-6"
+              >
+                <div
+                  class="px-6 py-4 border-b border-gray-100 flex items-center gap-3"
+                >
+                  <i
+                    data-lucide="package"
+                    class="w-[18px] h-[18px] text-[#ff4444]"
+                  ></i>
+                  <h2 class="text-[14px] font-bold text-gray-900">
+                    Sender Details
+                  </h2>
+                </div>
+                <div class="p-6">
+                  <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+                    <div class="">
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Sender Name
+                      </div>
+                      <div
+                        id="senderName"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Contact Number
+                      </div>
+                      <div
+                        id="senderPhone"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Country
+                      </div>
+                      <div
+                        id="senderCountry"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        City
+                      </div>
+                      <div
+                        id="senderCity"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Pin code
+                      </div>
+                      <div
+                        id="senderPincode"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-8">
+                    <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                      Address Line (House number, Street number, Locality)
+                    </div>
+                    <div
+                      id="senderAddress"
+                      class="text-[14px] text-gray-500"
+                    ></div>
+                  </div>
+                  <div>
+                    <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                      Enter Landmark
+                    </div>
+                    <div
+                      id="senderLandmark"
+                      class="text-[14px] text-gray-500"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RECEIVER-->
+              <div
+                class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-6"
+              >
+                <div
+                  class="px-6 py-4 border-b border-gray-100 flex items-center gap-3"
+                >
+                  <i
+                    data-lucide="package"
+                    class="w-[18px] h-[18px] text-[#ff4444]"
+                  ></i>
+                  <h2 class="text-[14px] font-bold text-gray-900">
+                    Receiver Details
+                  </h2>
+                </div>
+                <div class="p-6">
+                  <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Receiver Name
+                      </div>
+                      <div
+                        id="receiverName"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Contact Number
+                      </div>
+                      <div
+                        id="receiverPhone"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Country
+                      </div>
+                      <div
+                        id="receiverCountry"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        City
+                      </div>
+                      <div
+                        id="receiverCity"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Pin code
+                      </div>
+                      <div
+                        id="receiverPincode"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-8">
+                    <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                      Address Line (House number, Street number, Locality)
+                    </div>
+                    <div
+                      id="receiverAddress"
+                      class="text-[14px] text-gray-500"
+                    ></div>
+                  </div>
+                  <div>
+                    <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                      Enter Landmark
+                    </div>
+                    <div
+                      id="receiverLandmark"
+                      class="text-[14px] text-gray-500"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SHIPMENT DETAILS -->
+              <div
+                class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-6"
+              >
+                <div
+                  class="px-6 py-4 border-b border-gray-100 flex items-center gap-3"
+                >
+                  <i
+                    data-lucide="package"
+                    class="w-[18px] h-[18px] text-[#ff4444]"
+                  ></i>
+                  <h2 class="text-[14px] font-bold text-gray-900">
+                    Shipment Details
+                  </h2>
+                </div>
+                <div class="p-6">
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div
+                      class="bg-[#fcfcfc] py-6 px-4 rounded-xl border border-gray-100 flex flex-col items-center justify-center text-center"
+                    >
+                      <div class="text-[12px] font-semibold text-gray-900 mb-2">
+                        Weight(gms)
+                      </div>
+                      <div
+                        id="shipmentWeight"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div
+                      class="bg-[#fcfcfc] py-6 px-4 rounded-xl border border-gray-100 flex flex-col items-center justify-center text-center"
+                    >
+                      <div class="text-[12px] font-semibold text-gray-900 mb-2">
+                        Length(m)
+                      </div>
+                      <div
+                        id="shipmentLength"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div
+                      class="bg-[#fcfcfc] py-6 px-4 rounded-xl border border-gray-100 flex flex-col items-center justify-center text-center"
+                    >
+                      <div class="text-[12px] font-semibold text-gray-900 mb-2">
+                        Width(m)
+                      </div>
+                      <div
+                        id="shipmentWidth"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div
+                      class="bg-[#fcfcfc] py-6 px-4 rounded-xl border border-gray-100 flex flex-col items-center justify-center text-center"
+                    >
+                      <div class="text-[12px] font-semibold text-gray-900 mb-2">
+                        Height(m)
+                      </div>
+                      <div
+                        id="shipmentHeight"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Item Type
+                      </div>
+                      <div
+                        id="shipmentItemType"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Quantity
+                      </div>
+                      <div
+                        id="shipmentQuantity"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SERVICE DETAILS -->
+              <div
+                class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-6"
+              >
+                <div
+                  class="px-6 py-4 border-b border-gray-100 flex items-center gap-3"
+                >
+                  <i
+                    data-lucide="package"
+                    class="w-[18px] h-[18px] text-[#ff4444]"
+                  ></i>
+                  <h2 class="text-[14px] font-bold text-gray-900">
+                    Service Details
+                  </h2>
+                </div>
+
+                <div class="p-6">
+                  <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Type of service
+                      </div>
+                      <div
+                        id="serviceType"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Additional Service
+                      </div>
+                      <div
+                        id="additionalService"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Total Amount
+                      </div>
+                      <div
+                        id="totalAmount"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CONTENT DESCRIPTION & SPECIAL INSTRUCTIONS -->
+                <div class="p-6 border-t border-gray-100">
+                  <div class="space-y-4">
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Content Description
+                      </div>
+                      <div
+                        id="description"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+
+                    <div>
+                      <div class="text-[12px] font-semibold text-gray-900 mb-1">
+                        Special Instruction
+                      </div>
+                      <div
+                        id="specialInstruction"
+                        class="text-[14px] text-gray-500"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div
+      id="pageTransition"
+      class="fixed inset-0 z-[9999] bg-white/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+    >
+      <div class="flex flex-col items-center gap-4">
+        <div
+          class="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#F93C3F] animate-spin"
+        ></div>
+        <p id="pageTransitionText" class="text-sm text-gray-500">Loading...</p>
+      </div>
+    </div>
+
+    <!-- .js file references -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    <script src="/js/transitions.js"></script>
+    <script src="/js/operator.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "qubelift-logistics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calculusion/logistics_dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/calculusion/logistics_dashboard/issues"
+  },
+  "homepage": "https://github.com/calculusion/logistics_dashboard#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
+    "dotenv": "^17.4.2",
+    "express-rate-limit": "^8.5.2",
+    "pg": "^8.21.0",
+    "resend": "^6.14.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  }
+}
+

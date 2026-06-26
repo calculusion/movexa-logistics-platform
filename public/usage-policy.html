@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usage Policy | Movexa</title>
+
+    <link rel="stylesheet" href="/css/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link rel="prefetch" href="/dashboard">
+    <link rel="prefetch" href="/tracking">
+    <link rel="prefetch" href="/shippingpage">
+    <link rel="prefetch" href="/support">
+    <link rel="prefetch" href="/usage-policy">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      section {
+        scroll-margin-top: 96px;
+      }
+
+      .contents-link {
+        color: #4b5563;
+      }
+
+      .contents-link:hover {
+        color: #F93C3F;
+        background-color: rgba(249, 60, 63, 0.05);
+      }
+
+      .contents-link.active {
+        color: #F93C3F;
+        background-color: rgba(249, 60, 63, 0.08);
+        font-weight: 600;
+      }
+    </style>
+    <style>
+      #protectedContent {
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+    </style>
+  </head>
+
+  <body class="text-gray-900 antialiased flex h-screen overflow-hidden bg-white">
+
+    <div id="mobileWarning" class="hidden fixed inset-0 z-[99999] bg-[#F5F6F7] items-center justify-center p-8">
+      <div class="max-w-md text-center">
+        <img src="/assets/movexalogolight.png" class="h-5 mx-auto mb-8" alt="Movexa">
+
+        <div class="flex justify-center mb-6">
+          <img src="/maincontenticons/desktop.svg" class="w-16 h-16" alt="desktop">
+        </div>
+
+        <h1 class="text-[16px] font-bold text-[#2D2D2D] mb-4">
+            Desktop Experience Recommended
+        </h1>
+        <p class="text-gray-500 text-[14px] leading-relaxed">
+            Movexa is currently optimized for desktop and laptop devices.
+            Please access the platform using a screen width of at least 1024 pixels for the best experience.
+        </p>
+      </div>
+    </div>
+
+    <div id="protectedContent" class="flex h-full w-full">
+    
+      <!-- STARTS LEFT SIDE MENU BAR -->
+      <aside
+        class="w-[260px] bg-[#2D2D2D] text-gray-300 hidden lg:flex flex-col flex-shrink-0 h-full z-20">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden hide-scrollbar">
+
+          <!-- LEFT SIDE MENU BAR - LOGO: movexa -->
+          <div class="h-24 flex items-center px-8 mb-2">
+            <div class="flex gap-3 text-2xl font-medium text-white tracking-tight items-center">
+              <img
+                src="/assets/movexalogodark.png" alt="movexaLogo" class="h-4 w-auto object-contain">
+            </div>
+          </div>
+
+          <!-- LEFT SIDE MENU BAR - MENU NAVIGATION -->
+          <nav class="px-4 space-y-1.5">
+            <a href="/dashboard"
+            class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/dasboardicon.svg" class="w-5 h-5" alt="dashboard">
+              Dashboard
+            </a>
+            <a href="/shippingpage"
+            class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/shippingicon.svg" class="w-5 h-5" alt="shipping">
+              Shipping
+            </a>
+            <a href="/tracking"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/trackingicon.svg" class="w-5 h-5" alt="tracking">
+              Tracking
+            </a>
+            <a href="/delivery-coverage-shipping-rates"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/expense.svg" class="w-5 h-5" alt="Expense">
+              Delivery Rates
+            </a>
+            <a href="/support"
+              class="flex items-center gap-4 px-4 py-3 -mr-4 text-[15px] text-white font-semibold rounded-l-[8px] hover:bg-[#F93C3F]/20 hover:-mr-4 transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/chat.svg" class="w-5 h-5" alt="chatsupport">
+              Support
+            </a>
+            <a href="/usage-policy"
+              class="flex items-center gap-4 px-4 py-3 mr-[-16px] rounded-l-[8px] text-[15px] bg-[#F93C3F] font-semibold text-white shadow-sm transition-colors duration-300 ease-in-out">
+              <img src="/sidebarIcons/termsofuse.svg" class="w-5 h-5" alt="termsofuse">
+              Usage Policy
+            </a>
+          </nav>
+
+        </div>
+
+        <!-- LEFT SIDE MENU BAR - ACCOUNT + LOG OUT CARD-->
+        <div class="bg-[#252525] px-5 py-6">
+          <div class="flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+              <img id="sidebarAvatar" src="/maincontenticons/profile.svg" alt="User Avatar" class="w-9 h-9 rounded-full object-cover">
+              <span id="sidebarFirstName" class="text-sm max-w-[80px] font-medium text-white truncate">User</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+
+              <a href="https://movexalogistics.betteruptime.com/" target="_blank" class="flex items-center">
+                <button type="button">
+                  <img src="/sidebarIcons/betterstack.svg" class="w-9 h-9 block" alt="Better Stack">
+                </button>
+              </a>
+              <button id="logoutBtn" type="button">
+                <img src="/sidebarIcons/logouticon.svg" class="w-9 h-9" alt="termsofuse">
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </aside>
+      <!-- ENDS LEFT SIDE MENU BAR -->
+
+      <!-- PAGE TRANSITION STARTS -->
+      <div id="pageContent" class="flex h-full w-full opacity-0 translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-full hide-scrollbar overflow-y-auto w-full relative z-10">
+          <div class="bg-white w-full h-full max-w-full mx-auto pt-0 px-[40px] pb-[400px]">
+            <div
+              class="flex flex-col min-h-[80vh] lg:py-24 bg-gray-50/30 w-full max-w-full mx-auto pt-2 pb-24 items-center justify-center">
+              <div class="flex flex-col md:flex-row lg:gap-16 sm:px-6 lg:px-8 w-full max-w-full mx-auto px-4 items-start">
+
+                <!-- Sidebar Navigation -->
+                <aside class="hidden md:flex w-64 flex-col gap-1 sticky top-24 flex-shrink-0">
+                  <h3 class="text-xs font-bold text-[#0A0A0A] uppercase tracking-widest mb-3 px-3">Contents</h3>
+                  <a href="#project-overview"
+                    class="contents-link text-sm font-semibold py-2.5 px-3 rounded-lg transition-colors">1.
+                    Project Overview</a>
+                  <a href="#intended-use"
+                    class="contents-link text-sm font-medium py-2.5 px-3 rounded-lg transition-colors">2.
+                    Intended Use</a>
+                  <a href="#data-collection"
+                  class="contents-link text-sm font-medium py-2.5 px-3 rounded-lg transition-colors">3.
+                    Data Collection</a>
+                  <a href="#security"
+                    class="contents-link text-sm font-medium py-2.5 px-3 rounded-lg transition-colors">4.
+                    Security Measures</a>
+                  <a href="#prohibited-activities"
+                    class="contents-link text-sm font-medium py-2.5 px-3 rounded-lg transition-colors">5.
+                    Prohibited Activities</a>
+                  <a href="#disclaimer"
+                  class="contents-link text-sm font-medium py-2.5 px-3 rounded-lg transition-colors">6.
+                    Disclaimer & Liability</a>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="flex-1 bg-white rounded-[10px] border border-gray-200/75 p-8 md:p-8 shadow-sm w-full max-w-full">
+
+                  <!-- Header -->
+                  <h1 class="text-[28px] font-bold text-gray-900 mb-1 tracking-tight">Usage Policy</h1>
+                  
+                  <p class="text-gray-500 font-medium text-[16px] mb-7">Last updated: June 2026</p>
+
+                  <div class="mt-6 rounded-[10px] border border-amber-200 bg-amber-50 p-4 mb-10">
+                    <p class="text-sm text-amber-800 leading-relaxed">
+                      Movexa is an educational logistics platform created for learning, demonstration, and portfolio purposes only. The platform does not provide real-world shipping, transportation, or courier services.
+                    </p>
+                  </div>
+
+                  <!-- Content Sections -->
+                  <div class="flex flex-col gap-12 text-[15px] leading-relaxed text-gray-600">
+
+                    <!-- PROJECT OVERVIEW -->
+                    <section id="project-overview">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">1. Project Overview</h2>
+                      <p>
+                        Movexa is a demonstration logistics management platform developed solely for educational, research, and portfolio purposes. 
+                        The platform has been created to showcase modern web development practices, database design, authentication workflows, shipment lifecycle management, 
+                        and logistics-related user experiences within a simulated environment.
+                      </p>
+                      <p class="mt-4">
+                        Movexa enables users to explore and interact with features commonly found in logistics and supply chain management systems, including shipment creation, 
+                        consignment tracking, status updates, delivery workflows, analytics dashboards, and user account management.
+                      </p>
+                      <p class="mt-4">
+                        All data, shipment records, tracking events, delivery statuses, locations, and analytics displayed within the platform are generated for demonstration and testing purposes only. 
+                        Any names, addresses, contact details, shipment identifiers, or operational metrics shown on the platform are fictional, anonymized, user-generated for testing, 
+                        or otherwise intended exclusively for non-commercial use.
+                      </p>
+                      <p class="mt-4">
+                        Movexa is not a registered logistics company, courier service, freight operator, transportation provider, or supply chain management business. 
+                        The platform does not facilitate, arrange, process, transport, store, or deliver physical goods or shipments of any kind.
+                      </p>
+                      <p class="mt-4">
+                        Users must not rely on information presented within Movexa for real-world shipping, transportation, business, legal, financial, or operational decisions.
+                      </p>
+                    </section>
+
+                    <!-- INTENDED USE -->
+                    <section id="intended-use">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">2. Intended Use</h2>
+                    
+                      <p class="mb-4">Movexa is intended exclusively for educational, demonstration, and portfolio purposes. The platform may be used for:</p>
+                    
+                      <ul class="list-disc pl-6 space-y-2 marker:text-gray-400">
+                        <li>Educational activities and academic projects</li>
+                        <li>Software demonstrations and technical presentations</li>
+                        <li>Portfolio showcases and skill assessments</li>
+                        <li>Testing and simulating logistics workflows</li>
+                        <li>Learning shipment management concepts and processes</li>
+                        <li>Exploring shipment lifecycle tracking and status updates</li>
+                        <li>Evaluating user interface and user experience designs</li>
+                        <li>Demonstrating database integration and authentication workflows</li>
+                      </ul>
+                    
+                      <p class="mt-6 mb-4">Movexa must not be used for:</p>
+                    
+                      <ul class="list-disc pl-6 space-y-2 marker:text-gray-400">
+                        <li>Processing or coordinating real shipments</li>
+                        <li>Managing commercial logistics operations</li>
+                        <li>Tracking actual freight, packages, or deliveries</li>
+                        <li>Storing sensitive, regulated, or business-critical information</li>
+                        <li>Making operational, financial, or transportation decisions</li>
+                        <li>Providing logistics, courier, freight, or supply chain services</li>
+                      </ul>
+                      
+                      <p class="mt-6">
+                        Users must not rely on Movexa for real-world logistics operations, transportation management, or commercial shipping activities.
+                      </p>
+                    </section>
+
+                    <!-- DATA COLLECTION -->
+                    <section id="data-collection">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">3. Data Collection and Storage</h2>
+                    
+                      <p class="mb-4">
+                        Movexa collects and stores information necessary to provide, maintain, and improve platform functionality. 
+                        Depending on how the platform is used, this information may include:
+                      </p>
+                    
+                      <ul class="list-disc pl-6 space-y-2 marker:text-gray-400">
+                        <li>Account information, such as names, email addresses, and authentication details</li>
+                        <li>Shipment records and consignment information</li>
+                        <li>Sender and receiver details provided during shipment creation</li>
+                        <li>User preferences and account settings</li>
+                        <li>Technical information, including device, browser, and session data</li>
+                        <li>Support requests, feedback submissions, and communications</li>
+                      </ul>
+                    
+                      <p class="mt-4">
+                        Information stored within Movexa is used exclusively for educational demonstrations, feature testing, troubleshooting, analytics, 
+                        security monitoring, and platform improvement.
+                      </p>
+                    
+                      <p class="mt-4">
+                        User data is hosted and processed using secure third-party infrastructure providers that support core platform services, 
+                        including authentication, database management, hosting, and system monitoring.
+                      </p>
+
+                      <p class="mt-4">
+                        Users are encouraged not to submit confidential, sensitive, or business-critical information through the platform. 
+                        Any shipment data entered into Movexa should be considered demonstration data only.
+                      </p>
+
+                      <p class="mt-4">
+                        Movexa does not sell, rent, or trade user information to third parties for marketing or advertising purposes.
+                      </p>
+                    </section>
+
+                    <!-- SECURITY -->
+                    <section id="security">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">4. Security Measures</h2>
+                    
+                      <p class="mb-4">
+                        Movexa implements reasonable technical and organizational safeguards designed to protect user information and maintain the integrity of the platform. 
+                        Security measures may include:
+                      </p>
+                    
+                      <ul class="list-disc pl-6 space-y-2 marker:text-gray-400">
+                        <li>Secure user authentication and account verification processes</li>
+                        <li>Role-based access controls and authorization mechanisms</li>
+                        <li>Encrypted HTTPS connections for data transmitted between users and the platform</li>
+                        <li>API rate limiting and abuse prevention measures</li>
+                        <li>Protected database access with restricted permissions</li>
+                        <li>Server-side input validation and sanitization</li>
+                        <li>Session management and access token security</li>
+                        <li>Continuous monitoring for suspicious activity and unauthorized access attempts</li>
+                      </ul>
+                    
+                      <p class="mt-6">
+                        These measures are intended to reduce the risk of unauthorized access, misuse, alteration, or disclosure of information stored within the platform.
+                      </p>
+
+                      <p class="mt-4">
+                        Despite these efforts, no internet-based service, application, or data transmission method can guarantee complete security. 
+                        Users acknowledge that all online platforms are subject to inherent cybersecurity risks, including service interruptions, software vulnerabilities, and unauthorized access attempts.
+                      </p>
+
+                      <p class="mt-4">
+                        Users are responsible for maintaining the confidentiality of their account credentials and for taking appropriate precautions when accessing the platform.
+                      </p>
+
+                      
+                    </section>
+
+                    <!-- PROHIBITED ACTIVITIES -->
+                    <section id="prohibited-activities">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">5. Prohibited Activities</h2>
+                    
+                      <p class="mb-4">
+                        To maintain a secure, reliable, and educational environment, users must not engage in activities that could disrupt, compromise, or misuse the platform.
+                      </p>
+                    
+                      <ul class="list-disc pl-6 space-y-2 marker:text-gray-400">
+                        <li>Attempt to gain unauthorized access to accounts, systems, databases, APIs, or restricted areas of the platform</li>
+                        <li>Access, modify, or retrieve information belonging to other users without permission</li>
+                        <li>Interfere with or disrupt the normal operation, performance, or availability of the platform</li>
+                        <li>Submit, upload, transmit, or distribute malicious code, malware, viruses, or harmful content</li>
+                        <li>Use automated tools to disrupt the platform</li>
+                        <li>Abuse APIs, contact forms, feedback channels, or support systems through excessive, automated, or fraudulent requests</li>
+                        <li>Use bots, scripts, crawlers, scrapers, or other automated tools to extract data or disrupt platform functionality</li>
+                        <li>Circumvent security controls, authentication mechanisms, rate limits, or access restrictions</li>
+                        <li>Reverse engineer, copy, reproduce, or commercially exploit any part of the platform without authorization</li>
+                        <li>Submit false, misleading, unlawful, defamatory, or fraudulent information</li>
+                        <li>Create shipment records that impersonate real individuals, businesses, or organizations</li>
+                        <li>Use the platform for any illegal, harmful, or unauthorized purpose</li>
+                        <li>Represent, advertise, or imply that Movexa is a real logistics company, freight operator, courier service, or transportation provider</li>
+                      </ul>
+
+                      <p class="mt-6 mb-4">
+                        Movexa reserves the right to suspend, restrict, or terminate access to users who violate these requirements or engage 
+                        in conduct that threatens the security, integrity, or intended purpose of the platform.
+                      </p>
+                    </section>
+
+                    <!-- DISCLAIMER -->
+                    <section id="disclaimer">
+                      <h2 class="text-[18px] font-semibold text-gray-900 mb-4 tracking-tight">6. Disclaimer and Limitation of Liability</h2>
+                    
+                      <p class="mb-4">
+                        Movexa is provided solely for educational, demonstration, testing, and portfolio purposes on an "as is" 
+                        and "as available" basis, without warranties or guarantees of any kind, whether express or implied.
+                      </p>
+                    
+                      <p class="mb-4">
+                        The platform owner makes no representations or warranties regarding the accuracy, 
+                        completeness, reliability, availability, security, or suitability of the platform, its features, or any information displayed within it.
+                      </p>
+                    
+                      <p>
+                        By accessing or using Movexa, users acknowledge and agree that they assume full responsibility for their use of the platform and understand its educational and non-commercial nature.
+                      </p>
+                    </section>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- PAGE TRANSITION ENDS -->
+     
+    <div id="pageTransition" class="fixed inset-0 z-[9999] bg-white/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#F93C3F] animate-spin"></div>
+        <p id="pageTransitionText" class="text-sm text-gray-500">Loading...</p>
+      </div>
+    </div>
+
+    <!-- .js file references -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    <script src="/js/transitions.js"></script>
+    <script src="/js/usage-policy.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/profile.js"></script>
+
+  </body>
+
+</html>

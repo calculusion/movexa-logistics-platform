@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+button,
+[role="button"],
+a {
+  cursor: pointer;
+}
+
+/* Desktop only dashboard */
+
+#mobileWarning {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+
+  #protectedContent {
+    display: none !important;
+  }
+
+  #mobileWarning {
+    display: flex !important;
+  }
+
+}
