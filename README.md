@@ -244,7 +244,7 @@ npm run dev
   ‎ ‎ ‎
 ## 📜 Usage Policy
 
-> Review the usage guidelines, acceptable use, and user responsibilities for the Movexa platform.
+> Review the usage guidelines, acceptable use, and user responsibilities for the Movexa Logistics platform.
 
 [![Usage Policy](https://img.shields.io/badge/📜_Usage_Policy-Read_Policy-0F172A?style=for-the-badge)](https://calculusionstudios.mintlify.app/usage-policy)
 
