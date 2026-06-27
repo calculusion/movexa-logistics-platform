@@ -1,8 +1,32 @@
 // Get references to the password reset form and UI elements
 const resetPasswordForm = document.getElementById("resetPasswordForm");
-
 const resetBtn = document.getElementById("resetBtn");
 const message = document.getElementById("message");
+const passwordRequirements = document.getElementById("passwordRequirements");
+const passwordInput = document.getElementById("password");
+
+function isPasswordValid(password) {
+  return (
+    password.length >= 8 &&
+    /[A-Z]/.test(password) &&
+    /[a-z]/.test(password) &&
+    /\d/.test(password) &&
+    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+  );
+}
+
+passwordInput.addEventListener("input", () => {
+  if (passwordInput.value.length === 0) {
+    passwordRequirements.classList.add("hidden");
+    return;
+  }
+
+  if (isPasswordValid(passwordInput.value)) {
+    passwordRequirements.classList.add("hidden");
+  } else {
+    passwordRequirements.classList.remove("hidden");
+  }
+});
 
 // Handle password reset form submission
 resetPasswordForm.addEventListener("submit", async (e) => {
@@ -12,8 +36,15 @@ resetPasswordForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
+  if (!isPasswordValid(password)) {
+    passwordRequirements.classList.remove("hidden");
+
+    return;
+  }
+
   // Hide any previous status message
   message.classList.add("hidden");
+  passwordRequirements.classList.add("hidden");
 
   // Ensure both password fields match
   if (password !== confirmPassword) {
@@ -44,7 +75,7 @@ resetPasswordForm.addEventListener("submit", async (e) => {
     message.classList.remove("hidden");
 
     resetBtn.disabled = false;
-    resetBtn.textContent = "Update Password";
+    resetBtn.textContent = "Reset Password";
 
     return;
   }

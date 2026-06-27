@@ -1,5 +1,8 @@
-// Execute the shipment details loading process immediately
+const pageTransition = document.getElementById("pageTransition");
 
+pageTransition.classList.remove("opacity-0", "pointer-events-none");
+
+// Execute the shipment details loading process immediately
 (async () => {
   try {
     // Read the consignment ID from the URL
@@ -56,15 +59,15 @@
         },
       );
 
-      shipment = await response.json();
-
       if (!response.ok) {
         sessionStorage.removeItem("currentShipment");
 
-        window.location.href = "/no-shipment";
+        window.location.replace("/no-shipment");
 
         return;
       }
+
+      shipment = await response.json();
     }
 
     // Update the shipment progress timeline and delivery badge
@@ -246,6 +249,7 @@
     // Reveal the page content after all data has loaded
     const pageContent = document.getElementById("pageContent");
 
+    pageTransition.classList.add("opacity-0", "pointer-events-none");
     pageContent.classList.remove("opacity-0", "translate-y-2");
   } catch (error) {
     // Log unexpected errors

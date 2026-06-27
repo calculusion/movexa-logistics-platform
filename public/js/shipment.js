@@ -1,5 +1,3 @@
-console.log("shipment.js loaded");
-
 // ===============================
 // ETS2 CITY DATABASE
 // ===============================
@@ -341,7 +339,13 @@ function setupCountryCity(
     e.stopPropagation();
 
     if (!selectedCountry) {
-      alert("Select country first");
+      const message =
+        countryDropdownId === "fromCountryDropdown"
+          ? "Please select the sender's country first."
+          : "Please select the receiver's country first.";
+
+      showToast(message, "error");
+
       return;
     }
 
@@ -484,6 +488,8 @@ function setupGenerateButton() {
     if (generateBtn.disabled) return;
     generateBtn.disabled = true;
 
+    generateBtn.textContent = "Creating shipment...";
+
     try {
       const requiredFields = document.querySelectorAll(
         "input[required], textarea[required]",
@@ -506,10 +512,106 @@ function setupGenerateButton() {
 
         return;
       }
+
+      const dropdowns = [
+        {
+          id: "fromCountrySelected",
+          placeholder: "Select Country",
+          name: "From Country",
+        },
+        {
+          id: "fromCity",
+          placeholder: "Select City",
+          name: "From City",
+        },
+        {
+          id: "toCountrySelected",
+          placeholder: "Select Country",
+          name: "To Country",
+        },
+        {
+          id: "toCity",
+          placeholder: "Select City",
+          name: "To City",
+        },
+        {
+          id: "itemSelected",
+          placeholder: "Select",
+          name: "Item Type",
+        },
+        {
+          id: "serviceSelected",
+          placeholder: "Select",
+          name: "Service",
+        },
+        {
+          id: "deliverySelected",
+          placeholder: "Select",
+          name: "Delivery Type",
+        },
+        {
+          id: "paymentSelected",
+          placeholder: "Select",
+          name: "Payment Mode",
+        },
+      ];
+
+      for (const dropdown of dropdowns) {
+        const element = document.getElementById(dropdown.id);
+
+        if (element.textContent.trim() === dropdown.placeholder) {
+          showToast(`Please select ${dropdown.name}.`, "error");
+
+          return;
+        }
+      }
     } catch (error) {
       console.error(error);
     } finally {
       generateBtn.disabled = false;
+      generateBtn.textContent = "Generate Shipment";
+    }
+
+    const senderName = document.getElementById("senderName").value.trim();
+    const senderPhone = document.getElementById("senderPhone").value.trim();
+    const senderAddress = document.getElementById("senderAddress").value.trim();
+    const senderCity = document.getElementById("fromCity").innerText.trim();
+    const senderPincode = document.getElementById("senderPincode").value.trim();
+
+    const receiverName = document.getElementById("receiverName").value.trim();
+    const receiverPhone = document.getElementById("receiverPhone").value.trim();
+    const receiverAddress = document
+      .getElementById("receiverAddress")
+      .value.trim();
+    const receiverCity = document.getElementById("toCity").innerText.trim();
+    const receiverPincode = document
+      .getElementById("receiverPincode")
+      .value.trim();
+
+    const senderCountry = document
+      .getElementById("fromCountrySelected")
+      .textContent.trim();
+
+    const receiverCountry = document
+      .getElementById("toCountrySelected")
+      .textContent.trim();
+
+    if (
+      senderName.toLowerCase() === receiverName.toLowerCase() &&
+      senderPhone === receiverPhone &&
+      senderAddress.toLowerCase() === receiverAddress.toLowerCase() &&
+      senderCity === receiverCity &&
+      senderPincode === receiverPincode
+    ) {
+      showToast(
+        "Sender and receiver cannot be the same person at the same address.",
+        "error",
+      );
+
+      generateBtn.disabled = false;
+      generateBtn.textContent = "Generate Shipment";
+
+      return;
     }
 
     const shipmentData = {
@@ -681,6 +783,26 @@ document.addEventListener("DOMContentLoaded", () => {
   setupGenerateButton();
 });
 
+function resetDropdowns() {
+  document.getElementById("fromCountrySelected").textContent = "Select Country";
+  document.getElementById("fromCity").textContent = "Select City";
+
+  document.getElementById("toCountrySelected").textContent = "Select Country";
+  document.getElementById("toCity").textContent = "Select City";
+
+  document.getElementById("itemSelected").textContent = "Select";
+
+  document.getElementById("serviceSelected").textContent = "Select";
+
+  document.getElementById("additionalServiceSelected").textContent = "Select";
+
+  document.getElementById("deliverySelected").textContent = "Select";
+
+  document.getElementById("paymentSelected").textContent = "Select";
+
+  calculatePrice();
+}
+
 function clearErrors() {
   document.querySelectorAll('[id$="Error"]').forEach((element) => {
     element.textContent = "";
@@ -702,3 +824,9 @@ function displayErrors(errors) {
     }
   });
 }
+
+window.addEventListener("load", () => {
+  document.getElementById("shipmentForm").reset();
+  resetDropdowns();
+  clearErrors();
+});

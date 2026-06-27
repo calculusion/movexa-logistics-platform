@@ -10,13 +10,15 @@ window.addEventListener("load", () => {
 
   // Redirect to the shipping page if no consignment ID is provided
   if (!consignmentId) {
-    window.location.href = "/shippingpage";
+    window.location.replace("/shippingpage");
 
     return;
   }
 
   // Redirect to the confirmation page after displaying the loading animation
   setTimeout(() => {
-    window.location.href = `/confirmation?consignment=${encodeURIComponent(consignmentId)}`;
+    window.location.replace(
+      `/confirmation?consignment=${encodeURIComponent(consignmentId)}`,
+    );
   }, 2000);
 });

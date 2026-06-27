@@ -154,6 +154,7 @@
         <!-- STARTS RIGHT SIDE CONTENT -->
         <main class="flex-1 flex flex-col h-full overflow-y-auto hide-scrollbar w-full relative z-10">
             <div class="p-6 md:p-10 max-w-[1600px] mx-auto w-full">
+                <form id="shipmentForm">
                 <div id="shipmentFormSection"></div>
 
                 <!-- HEADER SECTION - SHIPPING -->
@@ -182,7 +183,7 @@
                     <div id="message" class="hidden">
                     </div>
                     <button id="generateBtn" type="button"
-                        class="bg-[#ff4444] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-red-500 transition-colors whitespace-nowrap shadow-sm">
+                        class="bg-[#32B66B] text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-[#0FA851] transition-colors whitespace-nowrap shadow-sm">
                         Validate &amp; Generate Consignment ID
                     </button>
                 </div>
@@ -239,7 +240,7 @@
                                         Select Country<span class="text-red-500 ml-0.5">*</span>
                                     </label>
 
-                                    <div id="fromCountryDropdown" required
+                                    <div id="fromCountryDropdown"
                                         class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                         <span id="fromCountrySelected" class="text-base text-gray-700">
@@ -290,7 +291,7 @@
                                         Select City<span class="text-red-500 ml-0.5">*</span>
                                     </label>
 
-                                    <div id="fromCityDropdown" required
+                                    <div id="fromCityDropdown"
                                         class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                         <span id="fromCity" class="text-base text-gray-700">
@@ -321,7 +322,7 @@
 
                                     <!-- Sender Landmark -->
                                     <div>
-                                        <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark</label>
+                                        <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark<span class="text-red-500 ml-0.5">*</span></label>
                                         <input id="senderLandmark" type="text" maxlength="40" required
                                             class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
                                         <p id="senderLandmarkError" class="hidden mt-1 text-sm text-red-500"></p>
@@ -379,7 +380,7 @@
                                         Select Country<span class="text-red-500 ml-0.5">*</span>
                                     </label>
 
-                                    <div id="toCountryDropdown" required
+                                    <div id="toCountryDropdown"
                                         class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                         <span id="toCountrySelected" class="text-base text-gray-700">
@@ -430,7 +431,7 @@
                                         Select City<span class="text-red-500 ml-0.5">*</span>
                                     </label>
 
-                                    <div id="toCityDropdown" required
+                                    <div id="toCityDropdown"
                                         class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                         <span id="toCity" class="text-base text-gray-700">
@@ -461,7 +462,7 @@
 
                                 <!-- Reciever Landmark -->
                                 <div>
-                                    <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark</label>
+                                    <label class="block text-sm font-normal text-gray-800 mb-2">Enter Landmark<span class="text-red-500 ml-0.5">*</span></label>
                                     <input id="receiverLandmark" type="text" maxlength="40" required
                                         class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
                                     <p id="receiverLandmarkError" class="hidden mt-1 text-sm text-red-500"></p>
@@ -487,7 +488,7 @@
                                 Select an Item<span class="text-red-500 ml-0.5">*</span>
                             </label>
 
-                            <div id="itemDropdown" requiredrequired
+                            <div id="itemDropdown"
                                 class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                 <span id="itemSelected" class="text-base text-gray-700">
@@ -524,7 +525,7 @@
 
                             <!-- Number of Item (Quantity) -->
                             <div class="w-full sm:w-28">
-                                <label class="block text-sm font-normal text-gray-800 mb-2">Number of Items</label>
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Quantity<span class="text-red-500 ml-0.5">*</span></label>
                                 <input id="numItems" type="number" maxlength="3" inputmode="numeric" required
                                     oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                     class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
@@ -543,7 +544,7 @@
 
                             <!-- Length -->
                             <div class="w-full sm:w-24">
-                                <label class="block text-sm font-normal text-gray-800 mb-2">Length (m)</label>
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Length (m)<span class="text-red-500 ml-0.5">*</span></label>
                                 <input id="length" type="number" maxlength="3" inputmode="numeric" required
                                     oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                     class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
@@ -552,7 +553,7 @@
 
                             <!-- Width-->
                             <div class="w-full sm:w-24">
-                                <label class="block text-sm font-normal text-gray-800 mb-2">Width (m)</label>
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Width (m)<span class="text-red-500 ml-0.5">*</span></label>
                                 <input id="width" type="number" maxlength="3" inputmode="numeric" required
                                     oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                     class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
@@ -561,7 +562,7 @@
 
                             <!-- Height -->
                             <div class="w-full sm:w-24">
-                                <label class="block text-sm font-normal text-gray-800 mb-2">Height (m)</label>
+                                <label class="block text-sm font-normal text-gray-800 mb-2">Height (m)<span class="text-red-500 ml-0.5">*</span></label>
                                 <input id="height" type="number" maxlength="3" inputmode="numeric" required
                                     oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                     class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
@@ -572,7 +573,7 @@
 
                     <!-- Content Description -->
                     <div>
-                        <label class="block text-sm font-normal text-gray-800 mb-2">Content Description</label>
+                        <label class="block text-sm font-normal text-gray-800 mb-2">Content Description<span class="text-red-500 ml-0.5">*</span></label>
                         <input id="description" type="text" maxlength="300" required
                             class="w-full border border-[#CDD5DF] rounded-lg px-3.5 py-2.5 text-base text-gray-500 bg-white focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-300 transition-shadow">
                         <p id="descriptionError" class="hidden mt-1 text-sm text-red-500"></p>
@@ -604,7 +605,7 @@
                                 <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400" stroke-width="1.5"></i>
                             </div>
 
-                            <div id="serviceOptions" required
+                            <div id="serviceOptions"
                                 class="hidden absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
 
                                 <div class="px-4 py-3 hover:bg-gray-100 cursor-pointer">
@@ -670,7 +671,7 @@
                                 Type of Delivery<span class="text-red-500 ml-0.5">*</span>
                             </label>
 
-                            <div id="deliveryDropdown" required
+                            <div id="deliveryDropdown"
                                 class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                 <span id="deliverySelected" class="text-base text-gray-700">
@@ -710,7 +711,7 @@
                                 Mode of Payment<span class="text-red-500 ml-0.5">*</span>
                             </label>
 
-                            <div id="paymentDropdown" required
+                            <div id="paymentDropdown"
                                 class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-3.5 py-2.5 bg-[#f8f9fa] cursor-pointer">
 
                                 <span id="paymentSelected" class="text-base text-gray-700">
@@ -771,6 +772,7 @@
 
             </div>
             </div>
+            </form>
         </main>
         </div>
     </div>

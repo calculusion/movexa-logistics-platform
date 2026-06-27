@@ -117,6 +117,24 @@ module.exports = async (req, res) => {
       specialInstructions,
     } = validation.data;
 
+    // Prevent creating a shipment where the sender and receiver are identical
+    if (
+      senderName.trim().toLowerCase() === receiverName.trim().toLowerCase() &&
+      senderPhone.trim() === receiverPhone.trim() &&
+      senderAddress.trim().toLowerCase() ===
+        receiverAddress.trim().toLowerCase() &&
+      senderCity.trim().toLowerCase() === receiverCity.trim().toLowerCase() &&
+      senderCountry.trim().toLowerCase() ===
+        receiverCountry.trim().toLowerCase() &&
+      senderPincode.trim() === receiverPincode.trim()
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Sender and receiver cannot be the same person at the same address.",
+      });
+    }
+
     const consignmentId = generateConsignmentId();
 
     // Sender city

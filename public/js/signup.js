@@ -3,6 +3,30 @@ const signupForm = document.getElementById("signupForm");
 const message = document.getElementById("message");
 const signupBtn = document.getElementById("signupBtn");
 const passwordRequirements = document.getElementById("passwordRequirements");
+const passwordInput = document.getElementById("password");
+
+function isPasswordValid(password) {
+  return (
+    password.length >= 8 &&
+    /[A-Z]/.test(password) &&
+    /[a-z]/.test(password) &&
+    /\d/.test(password) &&
+    /[!@#$%^&*(),.?":{}|<>]/.test(password)
+  );
+}
+
+passwordInput.addEventListener("input", () => {
+  if (passwordInput.value.length === 0) {
+    passwordRequirements.classList.add("hidden");
+    return;
+  }
+
+  if (isPasswordValid(passwordInput.value)) {
+    passwordRequirements.classList.add("hidden");
+  } else {
+    passwordRequirements.classList.remove("hidden");
+  }
+});
 
 // Handle user registration
 signupForm.addEventListener("submit", async (e) => {
@@ -11,6 +35,12 @@ signupForm.addEventListener("submit", async (e) => {
   // Retrieve the user's registration details
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
+
+  if (!isPasswordValid(password)) {
+    passwordRequirements.classList.remove("hidden");
+
+    return;
+  }
 
   // Hide any previous messages
   message.classList.add("hidden");
@@ -32,15 +62,11 @@ signupForm.addEventListener("submit", async (e) => {
 
   // Display validation or registration errors
   if (error) {
-    if (
-      error.message.includes("Password should contain at least one character")
-    ) {
-      passwordRequirements.classList.remove("hidden");
-    } else {
-      message.textContent = error.message;
-      message.className = "text-sm text-center text-red-500";
-      message.classList.remove("hidden");
-    }
+    message.textContent = error.message;
+
+    message.className = "text-sm text-center text-red-500";
+
+    message.classList.remove("hidden");
 
     signupBtn.disabled = false;
     signupBtn.textContent = "Sign up";
@@ -50,11 +76,11 @@ signupForm.addEventListener("submit", async (e) => {
 
   // Notify the user that the account has been created successfully
   message.textContent =
-    "Account created. Check your email to verify your account.";
+    "Please check your email to complete your registration.";
 
   message.className = "text-sm text-center text-green-600";
   message.classList.remove("hidden");
-  
+
   signupForm.reset();
 
   signupBtn.disabled = false;

@@ -50,7 +50,7 @@
       status.textContent = "still searching..";
 
       setTimeout(() => {
-        window.location.href = "/no-shipment";
+        window.location.replace("/no-shipment");
       }, 2000);
 
       return;
@@ -63,7 +63,9 @@
     status.textContent = "Opening consignment...";
 
     setTimeout(() => {
-      window.location.href = `/shipment-detail?consignmentId=${encodeURIComponent(consignmentId)}`;
+      window.location.replace(
+        `/shipment-detail?consignmentId=${encodeURIComponent(consignmentId)}`,
+      );
     }, 2500);
   } catch (error) {
     // Log the error and redirect to the fallback page
@@ -72,7 +74,7 @@
     status.textContent = "Something went wrong.";
 
     setTimeout(() => {
-      window.location.href = "/no-shipment";
+      window.location.replace("/no-shipment");
     }, 2000);
   }
 })();
