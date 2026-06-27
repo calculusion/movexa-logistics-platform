@@ -250,4 +250,5 @@ npm run dev
 
 ---
 Copyright © 2026 Ayush Giri. All rights reserved.
+> This repository is provided for educational and portfolio purposes only. Unauthorised copying, modification, redistribution, or commercial use of the source code is prohibited without prior written permission.
 
