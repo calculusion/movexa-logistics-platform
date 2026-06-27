@@ -138,7 +138,7 @@ MOVEXA LOGISTICS PLATFORM
 
 | Technology | Purpose | Description |
 |:-----------|:--------|:------------|
-| Figma | UI/UX Design | Designed wireframes, user flows, and high-fidelity interface prototypes. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ |
+| Figma | UI/UX Design | Designed wireframes, user flows, and high-fidelity interface prototypes. |
 | Google Fonts | Typography | Provides clean, modern typography for a consistent user experience. |
 | Lucide Icons | Icon Library | Lightweight SVG icons used throughout the dashboard interface. |
 | Lottie Animations | Animations | Displays smooth loading and transition animations. |
@@ -151,7 +151,7 @@ MOVEXA LOGISTICS PLATFORM
 | HTML5 | Structure | Defines the semantic structure of all web pages. |
 | CSS3 | Styling | Adds custom layouts, styling, and visual enhancements. |
 | Tailwind CSS v4 | UI Framework | Utility-first CSS framework for rapid interface development. |
-| JavaScript (ES6) | Client-side Logic | Powers interactive features and dynamic user interactions. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎‎  |
+| JavaScript (ES6) | Client-side Logic | Powers interactive features and dynamic user interactions. |
 
 
 ### ⟶ 3️⃣ Backend
@@ -159,7 +159,7 @@ MOVEXA LOGISTICS PLATFORM
 | Technology | Purpose | Description |
 |:-----------|:--------|:------------|
 | Node.js | Runtime | Executes server-side JavaScript for backend operations. |
-| Vercel Serverless Functions | APIs | Hosts scalable serverless backend API endpoints. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  |
+| Vercel Serverless Functions | APIs | Hosts scalable serverless backend API endpoints. |
 
 
 ### ⟶ 4️⃣ Database & Authentication
@@ -168,7 +168,7 @@ MOVEXA LOGISTICS PLATFORM
 |:-----------|:--------|:------------|
 | Neon PostgreSQL | Cloud Database | Managed PostgreSQL database hosted on Neon. |
 | PostgreSQL | Data Storage | Stores shipment, customer, and operational information. |
-| Supabase Auth | Authentication | Handles secure user authentication and session management. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ |
+| Supabase Auth | Authentication | Handles secure user authentication and session management. |
 | Google OAuth | Social Login | Allows users to securely sign in with Google. |
 
 
@@ -178,7 +178,7 @@ MOVEXA LOGISTICS PLATFORM
 |:-----------|:--------|:------------|
 | Zod | Validation | Validates API requests and user input before processing. |
 | Upstash Redis | Data Store | Provides cloud Redis for distributed services. |
-| Upstash Ratelimit | Rate Limiting | Protects APIs against spam and excessive requests. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎  ‎ ‎ ‎ ‎‎ ‎ |
+| Upstash Ratelimit | Rate Limiting | Protects APIs against spam and excessive requests.‎ |
 
 
 ### ⟶ 6️⃣ Services & Deployment
@@ -187,7 +187,7 @@ MOVEXA LOGISTICS PLATFORM
 |:-----------|:--------|:------------|
 | Resend | Email Service | Sends transactional and customer support emails. |
 | Better Stack | Monitoring | Monitors uptime and service availability. |
-| Vercel | Deployment | Deploys the application using a global edge network. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎  ‎ ‎ |
+| Vercel | Deployment | Deploys the application using a global edge network. |
 
 
 ### ⟶ 7️⃣ Development Tools
@@ -195,7 +195,7 @@ MOVEXA LOGISTICS PLATFORM
 | Technology | Purpose | Description |
 |:-----------|:--------|:------------|
 | Git | Version Control | Tracks project changes throughout development. |
-| GitHub | Repository Hosting | Stores source code and manages version history. ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ |
+| GitHub | Repository Hosting | Stores source code and manages version history. |
 
 ---
   ‎ ‎ ‎ ‎ 
